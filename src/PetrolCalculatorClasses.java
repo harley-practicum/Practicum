@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class PetrolCalculator {
+public class PetrolCalculatorClasses {
     public void calculate() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите количество действий => ");
@@ -9,7 +9,6 @@ public class PetrolCalculator {
             System.out.print("Введите тип топлива: 1 - АИ-92, 2 - АИ-95 => ");
             int petrolType = scanner.nextInt();
             System.out.print("Введите количество литров => ");
-            double razmer = scanner.nextDouble();
             double razmer = scanner.nextDouble();
             if (petrolType == 1) {
                 double price = new Ai92Calculator().calculate(razmer);
@@ -22,6 +21,7 @@ public class PetrolCalculator {
     }
 
     public static void main(String[] args) {
-        new PetrolCalculator().calculate();
+		System.out.println("Введённые аргументы:" + args);
+        new PetrolCalculatorClasses().calculate();
     }
 }
