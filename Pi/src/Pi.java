@@ -4,7 +4,7 @@ public class Pi {
             System.out.println("Введите количество пифагоровых троек для вывода или введите три числа для проверки.");
             return;
         }
-        if(args.length == 1){ //вывести N троек
+        if(args.length == 1){
             int N = Integer.parseInt(args[0]);
             int a = 1;
             int i = 0;
@@ -23,7 +23,7 @@ public class Pi {
                 }
                 a++;
             }
-        } else if (args.length == 3) { //проверить три числа
+        } else if (args.length == 3) {
             int a = Integer.parseInt(args[0]);
             int b = Integer.parseInt(args[1]);
             int c = Integer.parseInt(args[2]);
