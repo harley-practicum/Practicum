@@ -3,7 +3,6 @@ public class PetrolCalculator {
     public static void main(String[] args) {
         /*
         System.out.println("Введённые аргументы:" + args);
-
          */
         new PetrolCalculator().calculateLoop();
     }
