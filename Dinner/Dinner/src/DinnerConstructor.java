@@ -34,21 +34,21 @@ public class DinnerConstructor {
     }
 
     // Метод для получения случайного индекса
-    private int getRandomIndex(int size) {
-        return random.nextInt(size);  // Генерация числа от 0 до size - 1
+    public int getRandomIndex(int size) {
+        return random.nextInt(size);
     }
 
     // Метод для форматирования комбинаций в строку
     private String formatCombinations(List<List<String>> combinations) {
-        StringBuilder result = new StringBuilder();
+        String result = "";
         for (int i = 0; i < combinations.size(); i++) {
-            result.append("Комбинация ").append(i + 1).append(":\n");
+            result += "Комбинация " + (i + 1) + ":\n";
             for (String dish : combinations.get(i)) {
-                result.append(dish).append("\n");
+                result += dish + "\n";
             }
-            result.append("\n"); // Пустая строка для разделения комбинаций
+            result += "\n"; // Пустая строка для разделения комбинаций
         }
-        return result.toString();
+        return result;
     }
 
     // Метод для обработки ввода и генерации комбинаций
