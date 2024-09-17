@@ -27,7 +27,6 @@ public class Main {
             }
         }
     }
-
     // Метод для обработки добавления нового блюда
     private static void handleAddDish() {
         System.out.println("Введите тип блюда:");
