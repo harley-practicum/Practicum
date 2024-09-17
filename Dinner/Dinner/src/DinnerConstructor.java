@@ -6,7 +6,9 @@ public class DinnerConstructor {
 
     // Метод для добавления нового блюда
     public void addDish(String type, String name) {
-        dishesByType.putIfAbsent(type, new ArrayList<>());
+        if (!dishesByType.containsKey(type)) {
+            dishesByType.put(type, new ArrayList<String>());
+        }
         dishesByType.get(type).add(name);
     }
 
@@ -16,14 +18,14 @@ public class DinnerConstructor {
     }
 
     // Метод для генерации комбинаций блюд
-    public String generateCombinations(int numCombinations, List<String> types) {
+    private String generateCombinations(int numCombinations, List<String> types) {
         List<List<String>> combinations = new ArrayList<>();
         for (int i = 0; i < numCombinations; i++) {
             List<String> combination = new ArrayList<>();
             for (String type : types) {
                 List<String> dishes = dishesByType.get(type);
                 if (dishes != null && !dishes.isEmpty()) {
-                    int randomIndex = getRandomIndex(dishes.size());
+                    int randomIndex = random.nextInt(dishes.size());
                     String randomDish = dishes.get(randomIndex);
                     combination.add(randomDish);
                 }
@@ -33,20 +35,16 @@ public class DinnerConstructor {
         return formatCombinations(combinations);
     }
 
-    // Метод для получения случайного индекса
-    public int getRandomIndex(int size) {
-        return random.nextInt(size);
-    }
-
     // Метод для форматирования комбинаций в строку
     private String formatCombinations(List<List<String>> combinations) {
         String result = "";
         for (int i = 0; i < combinations.size(); i++) {
             result += "Комбинация " + (i + 1) + ":\n";
-            for (String dish : combinations.get(i)) {
+            List<String> combination = combinations.get(i);
+            for (String dish : combination) {
                 result += dish + "\n";
             }
-            result += "\n"; // Пустая строка для разделения комбинаций
+            result += "\n";
         }
         return result;
     }

@@ -27,6 +27,7 @@ public class Main {
             }
         }
     }
+
     // Метод для обработки добавления нового блюда
     private static void handleAddDish() {
         System.out.println("Введите тип блюда:");
@@ -36,6 +37,7 @@ public class Main {
         dinnerConstructor.addDish(type, name);
         System.out.println("Блюдо добавлено.");
     }
+
     // Метод для обработки генерации комбинаций
     private static void handleGenerateCombinations() {
         System.out.println("Введите количество комбинаций:");
@@ -45,6 +47,10 @@ public class Main {
         while (true) {
             String type = scanner.nextLine().trim().toLowerCase();
             if (type.isEmpty()) break;
+            if (!dinnerConstructor.checkType(type)) {
+                System.out.println("Тип блюда \"" + type + "\" не существует. Попробуйте снова.");
+                continue;
+            }
             types.add(type);
         }
         String result = dinnerConstructor.handleGenerateCombinations(numCombinations, types);
