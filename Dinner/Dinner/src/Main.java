@@ -9,14 +9,14 @@ public class Main {
             System.out.println("1. Добавить блюдо");
             System.out.println("2. Сгенерировать комбинации");
             System.out.println("3. Выход");
-            String choice = scanner.nextLine();
+            String choice = scanner.nextLine().trim();
 
             switch (choice) {
                 case "1":
-                    addDish();
+                    handleAddDish();
                     break;
                 case "2":
-                    generateCombinations();
+                    handleGenerateCombinations();
                     break;
                 case "3":
                     System.out.println("Программа завершена.");
@@ -27,42 +27,28 @@ public class Main {
         }
     }
 
-    // Метод для добавления нового блюда
-    private static void addDish() {
+    // Метод для обработки добавления нового блюда
+    private static void handleAddDish() {
         System.out.println("Введите тип блюда:");
-        String type = scanner.nextLine();
+        String type = scanner.nextLine().trim().toLowerCase();
         System.out.println("Введите название блюда:");
-        String name = scanner.nextLine();
+        String name = scanner.nextLine().trim();
         dinnerConstructor.addDish(type, name);
         System.out.println("Блюдо добавлено.");
     }
 
-    // Метод для генерации комбинаций
-    private static void generateCombinations() {
+    // Метод для обработки генерации комбинаций
+    private static void handleGenerateCombinations() {
         System.out.println("Введите количество комбинаций:");
-        int numCombinations = Integer.parseInt(scanner.nextLine());
+        int numCombinations = Integer.parseInt(scanner.nextLine().trim());
         List<String> types = new ArrayList<>();
         System.out.println("Введите типы блюд. Для завершения нажмите Enter на пустой строке.");
         while (true) {
-            String type = scanner.nextLine();
+            String type = scanner.nextLine().trim().toLowerCase();
             if (type.isEmpty()) break;
-            if (!dinnerConstructor.checkType(type)) {
-                System.out.println("Тип блюда не существует, попробуйте снова.");
-            } else {
-                types.add(type);  // Повторяющиеся типы разрешены
-            }
+            types.add(type);
         }
-        List<List<String>> combinations = dinnerConstructor.generateCombinations(types, numCombinations);
-
-        // Вывод каждой комбинации в столбик
-        for (int i = 0; i < combinations.size(); i++) {
-            System.out.println("Комбинация " + (i + 1) + ":");
-            for (String dish : combinations.get(i)) {
-                System.out.println(dish);
-            }
-            System.out.println(); // Пустая строка для разделения комбинаций
-        }
+        String result = dinnerConstructor.handleGenerateCombinations(numCombinations, types);
+        System.out.println(result);
     }
 }
-
-

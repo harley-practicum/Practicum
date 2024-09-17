@@ -15,13 +15,8 @@ public class DinnerConstructor {
         return dishesByType.containsKey(type);
     }
 
-    // Метод для генерации случайного индекса от 0 до размера коллекции - 1
-    private int getRandomIndex(int size) {
-        return random.nextInt(size);  // Генерация числа от 0 до size - 1
-    }
-
-    // Метод для генерации комбинаций
-    public List<List<String>> generateCombinations(List<String> types, int numCombinations) {
+    // Метод для генерации комбинаций блюд
+    public String generateCombinations(int numCombinations, List<String> types) {
         List<List<String>> combinations = new ArrayList<>();
         for (int i = 0; i < numCombinations; i++) {
             List<String> combination = new ArrayList<>();
@@ -35,21 +30,37 @@ public class DinnerConstructor {
             }
             combinations.add(combination);
         }
-        return combinations;
+        return formatCombinations(combinations);
+    }
+
+    // Метод для получения случайного индекса
+    private int getRandomIndex(int size) {
+        return random.nextInt(size);  // Генерация числа от 0 до size - 1
+    }
+
+    // Метод для форматирования комбинаций в строку
+    private String formatCombinations(List<List<String>> combinations) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < combinations.size(); i++) {
+            result.append("Комбинация ").append(i + 1).append(":\n");
+            for (String dish : combinations.get(i)) {
+                result.append(dish).append("\n");
+            }
+            result.append("\n"); // Пустая строка для разделения комбинаций
+        }
+        return result.toString();
+    }
+
+    // Метод для обработки ввода и генерации комбинаций
+    public String handleGenerateCombinations(int numCombinations, List<String> types) {
+        if (types.isEmpty()) {
+            return "Не введены типы блюд.";
+        }
+        for (String type : types) {
+            if (!checkType(type)) {
+                return "Тип блюда \"" + type + "\" не существует.";
+            }
+        }
+        return generateCombinations(numCombinations, types);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
