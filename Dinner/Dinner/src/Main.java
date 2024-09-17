@@ -36,7 +36,6 @@ public class Main {
         dinnerConstructor.addDish(type, name);
         System.out.println("Блюдо добавлено.");
     }
-
     // Метод для обработки генерации комбинаций
     private static void handleGenerateCombinations() {
         System.out.println("Введите количество комбинаций:");
