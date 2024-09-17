@@ -1,5 +1,6 @@
 import java.util.*;
-
+//это harley.andrey оперативка подвела и ссылка на репозиторий: https://github.com/harley-andrey/practicum
+// надеюсь все правильно сделал и не прийдется переделывать, а идти дальше
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
     private static final DinnerConstructor dinnerConstructor = new DinnerConstructor();
