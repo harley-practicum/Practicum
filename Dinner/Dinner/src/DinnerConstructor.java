@@ -1,72 +1,45 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class DinnerConstructor {
-    private Map<String, List<String>> dishesByType;
-    private Random random;
+    private final Map<String, List<String>> dishesByType = new HashMap<>();
+    private final Random random = new Random();
 
-    public DinnerConstructor(Random random) {
-        this.random = random;
-        this.dishesByType = new HashMap<>();
-        dishesByType.put("первое", new ArrayList<>());
-        dishesByType.put("второе", new ArrayList<>());
-        dishesByType.put("напиток", new ArrayList<>());
-    }
-
+    // Метод для добавления нового блюда
     public void addDish(String type, String name) {
-        String lowerCaseType = type.toLowerCase();
-        if (dishesByType.containsKey(lowerCaseType)) {
-            dishesByType.get(lowerCaseType).add(name);
-        } else {
-            System.out.println("Неизвестный тип блюда. Игнорирую.");
-        }
+        dishesByType.putIfAbsent(type, new ArrayList<>());
+        dishesByType.get(type).add(name);
     }
 
-    public void generateCombinations(int count, List<String> types) {
-        if (types.isEmpty()) {
-            System.out.println("Необходимо ввести хотя бы один тип блюда.");
-            return;
-        }
+    // Метод для проверки существования типа блюда
+    public boolean checkType(String type) {
+        return dishesByType.containsKey(type);
+    }
 
-        List<String> availableDishes = new ArrayList<>();
-        for (String type : types) {
-            List<String> dishes = dishesByType.get(type.toLowerCase());
-            if (dishes != null) {
-                availableDishes.addAll(dishes);
-            } else {
-                System.out.println("Неизвестный тип блюда: " + type);
-            }
-        }
+    // Метод для генерации случайного индекса от 0 до размера коллекции - 1
+    private int getRandomIndex(int size) {
+        return random.nextInt(size);  // Генерация числа от 0 до size - 1
+    }
 
-        if (availableDishes.isEmpty()) {
-            System.out.println("Нет доступных блюд для указанных типов.");
-            return;
-        }
-
-        for (int i = 0; i < count; i++) {
-            String combination = "";
+    // Метод для генерации комбинаций
+    public List<List<String>> generateCombinations(List<String> types, int numCombinations) {
+        List<List<String>> combinations = new ArrayList<>();
+        for (int i = 0; i < numCombinations; i++) {
+            List<String> combination = new ArrayList<>();
             for (String type : types) {
-                combination += getRandomDish(type) + ", ";
+                List<String> dishes = dishesByType.get(type);
+                if (dishes != null && !dishes.isEmpty()) {
+                    int randomIndex = getRandomIndex(dishes.size());
+                    String randomDish = dishes.get(randomIndex);
+                    combination.add(randomDish);
+                }
             }
-            if (combination.length() > 0) {
-                combination = combination.substring(0, combination.length() - 2); // Удаляем последнюю запятую и пробел
-            }
-            System.out.println("Комбинация " + (i + 1) + ": " + combination);
+            combinations.add(combination);
         }
-    }
-
-    private String getRandomDish(String type) {
-        List<String> dishes = dishesByType.get(type.toLowerCase());
-        if (dishes != null && !dishes.isEmpty()) {
-            return dishes.get(random.nextInt(dishes.size()));
-        } else {
-            return "Нет доступных блюд";
-        }
+        return combinations;
     }
 }
+
+
 
 
 
