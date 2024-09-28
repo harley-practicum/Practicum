@@ -1,3 +1,7 @@
+package model;
+
+import java.util.Objects;
+
 public class Task {
     private String title;
     private String description;
@@ -11,7 +15,6 @@ public class Task {
         this.status = status;
     }
 
-    // Геттеры и сеттеры
     public String getTitle() {
         return title;
     }
@@ -32,25 +35,16 @@ public class Task {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public TaskStatus getStatus() {
         return status;
     }
 
     public void setStatus(TaskStatus status) {
         this.status = status;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Task task = (Task) o;
-        return id == task.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Integer.hashCode(id);
     }
 
     @Override
@@ -62,5 +56,23 @@ public class Task {
                 ", status=" + status +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Task)) return false;
+        Task task = (Task) o;
+        return id == task.id &&
+                title.equals(task.title) &&
+                description.equals(task.description) &&
+                status == task.status;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, description, id, status);
+    }
 }
+
+
 
