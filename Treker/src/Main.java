@@ -8,18 +8,22 @@ public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = new TaskManager();
 
-        Task task = new Task("Task 1", "Description 1", 1, TaskStatus.NEW);
-        taskManager.addTask(task);
-
-        Epic epic = new Epic("Epic 1", "Epic Description 1", 1, TaskStatus.NEW);
+        Epic epic = new Epic("Переезд", "Организовать переезд на новую квартиру");
         taskManager.addEpic(epic);
 
-        Subtask subtask = new Subtask("Subtask 1", "Subtask Description 1", 1, TaskStatus.NEW, 1);
-        taskManager.addSubtask(subtask);
+        Subtask subtask1 = new Subtask("Купить коробки", "Купить картонные коробки", epic.getId());
+        subtask1.setStatus(TaskStatus.NEW);
+        taskManager.addSubtask(subtask1);
 
-        System.out.println(taskManager.getTasks());
-        System.out.println(taskManager.getEpics());
-        System.out.println(taskManager.getSubtasks());
+        Subtask subtask2 = new Subtask("Упаковать вещи", "Упаковать все вещи в коробки", epic.getId());
+        subtask2.setStatus(TaskStatus.IN_PROGRESS);
+        taskManager.addSubtask(subtask2);
+
+        Subtask subtask3 = new Subtask("Загрузить машину", "Загрузить все коробки в машину для переезда", epic.getId());
+        subtask3.setStatus(TaskStatus.DONE);
+        taskManager.addSubtask(subtask3);
+
+        System.out.println(epic);
     }
 }
 

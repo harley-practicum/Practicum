@@ -6,15 +6,12 @@ public class Task {
     protected int id;
     protected TaskStatus status;
 
-    // Конструктор
-    public Task(String title, String description, int id, TaskStatus status) {
+    public Task(String title, String description) {
         this.title = title;
         this.description = description;
-        this.id = id;
-        this.status = status;
+        this.status = TaskStatus.NEW;
     }
 
-    // Геттеры
     public String getTitle() {
         return title;
     }
@@ -27,16 +24,18 @@ public class Task {
         return id;
     }
 
-    public TaskStatus getStatus() {
-        return status;
-    }
-
-    // Сеттер для id
     public void setId(int id) {
         this.id = id;
     }
 
-    // Переопределение метода toString
+    public TaskStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TaskStatus status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
@@ -47,8 +46,4 @@ public class Task {
                 '}';
     }
 }
-
-
-
-
 

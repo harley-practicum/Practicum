@@ -1,48 +1,36 @@
 package service;
 
 import model.Task;
-import model.TaskStatus;
-
+import model.Subtask;
+import model.Epic;
 import java.util.HashMap;
 import java.util.Map;
 
 public class TaskManager {
-    private final Map<Integer, Task> tasks = new HashMap<>();
-    private int idCounter = 0;
+    private Map<Integer, Task> tasks;
+    private Map<Integer, Subtask> subtasks;
+    private Map<Integer, Epic> epics;
+    private int idCounter;
 
-    // Метод для создания новой задачи
-    public Task createTask(String title, String description, TaskStatus status) {
-        Task task = new Task(title, description, 0, status);
-        task.setId(generateNewId()); // Устанавливаем id через сеттер
+    public TaskManager() {
+        tasks = new HashMap<>();
+        subtasks = new HashMap<>();
+        epics = new HashMap<>();
+        idCounter = 1;
+    }
+
+    public void addTask(Task task) {
+        task.setId(idCounter++);
         tasks.put(task.getId(), task);
-        return task;
     }
 
-    // Метод для генерации уникального id
-    private int generateNewId() {
-        return ++idCounter;
+    public void addSubtask(Subtask subtask) {
+        subtask.setId(idCounter++);
+        subtasks.put(subtask.getId(), subtask);
     }
 
-    // Метод для получения задачи по id
-    public Task getTaskById(int id) {
-        return tasks.get(id);
-    }
-
-    // Метод для удаления задачи по id
-    public void deleteTaskById(int id) {
-        tasks.remove(id);
-    }
-
-    // Метод для удаления всех задач
-    public void deleteAllTasks() {
-        tasks.clear();
-    }
-
-    // Метод для получения всех задач
-    public Map<Integer, Task> getAllTasks() {
-        return tasks;
+    public void addEpic(Epic epic) {
+        epic.setId(idCounter++);
+        epics.put(epic.getId(), epic);
     }
 }
-
-
-

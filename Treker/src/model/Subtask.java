@@ -1,17 +1,19 @@
 package model;
 
-import java.util.Objects;
-
 public class Subtask extends Task {
-    private final int epicId;
+    private int epicId;
 
-    public Subtask(String title, String description, int id, TaskStatus status, int epicId) {
-        super(title, description, id, status);
+    public Subtask(String title, String description, int epicId) {
+        super(title, description);
         this.epicId = epicId;
     }
 
     public int getEpicId() {
         return epicId;
+    }
+
+    public void setEpicId(int epicId) {
+        this.epicId = epicId;
     }
 
     @Override
@@ -24,16 +26,5 @@ public class Subtask extends Task {
                 ", epicId=" + epicId +
                 '}';
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Subtask)) return false;
-        return super.equals(o) && epicId == ((Subtask) o).epicId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), epicId);
-    }
 }
+
