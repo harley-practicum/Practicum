@@ -3,7 +3,7 @@ package model;
 import java.util.Objects;
 
 public class Subtask extends Task {
-    private int epicId;
+    private final int epicId;
 
     public Subtask(String title, String description, int id, TaskStatus status, int epicId) {
         super(title, description, id, status);
@@ -14,15 +14,14 @@ public class Subtask extends Task {
         return epicId;
     }
 
-    public void setEpicId(int epicId) {
-        this.epicId = epicId;
-    }
-
     @Override
     public String toString() {
         return "Subtask{" +
-                "epicId=" + epicId +
-                ", " + super.toString() +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", id=" + id +
+                ", status=" + status +
+                ", epicId=" + epicId +
                 '}';
     }
 
@@ -30,9 +29,7 @@ public class Subtask extends Task {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Subtask)) return false;
-        if (!super.equals(o)) return false;
-        Subtask subtask = (Subtask) o;
-        return epicId == subtask.epicId;
+        return super.equals(o) && epicId == ((Subtask) o).epicId;
     }
 
     @Override
@@ -40,9 +37,3 @@ public class Subtask extends Task {
         return Objects.hash(super.hashCode(), epicId);
     }
 }
-
-
-
-
-
-
