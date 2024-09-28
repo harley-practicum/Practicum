@@ -1,20 +1,21 @@
 package model;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Epic extends Task {
-    private List<Subtask> subtasks;
+    private List<Integer> subtasks;
 
     public Epic(String title, String description) {
         super(title, description);
         this.subtasks = new ArrayList<>();
     }
 
-    public void addSubtask(Subtask subtask) {
-        subtasks.add(subtask);
+    public void addSubtask(int subtaskId) {
+        subtasks.add(subtaskId);
     }
 
-    public List<Subtask> getSubtasks() {
+    public List<Integer> getSubtasks() {
         return subtasks;
     }
 
@@ -29,4 +30,6 @@ public class Epic extends Task {
                 '}';
     }
 }
+
+
 
