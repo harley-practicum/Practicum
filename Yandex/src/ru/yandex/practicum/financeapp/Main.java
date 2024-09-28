@@ -1,2 +1,6 @@
-package ru.yandex.practicum.financeapp;public class Main {
+package ru.yandex.practicum.financeapp;
+
+public class Main
+
+{
 }
