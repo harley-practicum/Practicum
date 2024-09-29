@@ -21,13 +21,16 @@ public class TaskManager {
     }
 
     public Subtask createSubtask(Subtask subtask) {
+        Epic epic = epics.get(subtask.getEpicId());
+        if (epic == null) {
+            return null; // Если эпик с таким id не найден, ничего не делаем
+        }
+
         subtask.setId(generateId());
         subtasks.put(subtask.getId(), subtask);
-        Epic epic = epics.get(subtask.getEpicId());
-        if (epic != null) {
-            epic.addSubtask(subtask.getId());
-            updateEpicStatus(epic);
-        }
+        epic.addSubtask(subtask.getId());
+        updateEpicStatus(epic);
+
         return subtask;
     }
 
@@ -90,23 +93,26 @@ public class TaskManager {
         subtasks.clear();
     }
 
-    public Task updateTask(Task task) {
-        tasks.put(task.getId(), task);
-        return task;
-    }
-
-    public Subtask updateSubtask(Subtask subtask) {
-        subtasks.put(subtask.getId(), subtask);
-        Epic epic = epics.get(subtask.getEpicId());
-        if (epic != null) {
-            updateEpicStatus(epic);
+    public void updateTask(Task task) {
+        if (tasks.containsKey(task.getId())) {
+            tasks.put(task.getId(), task); // Обновляем задачу только если она существует
         }
-        return subtask;
     }
 
-    public Epic updateEpic(Epic epic) {
-        epics.put(epic.getId(), epic);
-        return epic;
+    public void updateSubtask(Subtask subtask) {
+        if (subtasks.containsKey(subtask.getId())) {
+            subtasks.put(subtask.getId(), subtask); // Обновляем подзадачу только если она существует
+            Epic epic = epics.get(subtask.getEpicId());
+            if (epic != null) {
+                updateEpicStatus(epic); // Обновляем статус эпика после обновления подзадачи
+            }
+        }
+    }
+
+    public void updateEpic(Epic epic) {
+        if (epics.containsKey(epic.getId())) {
+            epics.put(epic.getId(), epic); // Обновляем эпик только если он существует
+        }
     }
 
     private int generateId() {
@@ -145,4 +151,3 @@ public class TaskManager {
         }
     }
 }
-
