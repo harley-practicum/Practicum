@@ -1,10 +1,12 @@
 package model;
 
+import java.util.Objects;
+
 public class Task {
-    private int id;
-    private String title;
-    private String description;
-    private TaskStatus status;
+    public int id;
+    public String title;
+    public String description;
+    public TaskStatus status; //c protected у taskManager нет доступа
 
     public Task(String title, String description) {
         this.title = title;
@@ -14,10 +16,6 @@ public class Task {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -32,7 +30,25 @@ public class Task {
         return status;
     }
 
-    public void setStatus(TaskStatus status) {
-        this.status = status;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Task task)) return false;
+        return id == task.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                '}';
     }
 }
