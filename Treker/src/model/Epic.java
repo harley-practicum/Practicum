@@ -20,7 +20,7 @@ public class Epic extends Task {
         updateStatus();
     }
 
-    private void updateStatus() {
+    public void updateStatus() {
         if (subtasks.isEmpty()) {
             this.status = TaskStatus.NEW;
             return;
