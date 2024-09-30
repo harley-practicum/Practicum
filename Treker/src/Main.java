@@ -32,14 +32,10 @@ public class Main {
                     String taskTitle = scanner.nextLine();
                     System.out.println("Введите описание задачи:");
                     String taskDescription = scanner.nextLine();
-                    Task task = new Task() {
-                        // Используйте анонимный класс для создания задачи
-                        {
-                            setTitle(taskTitle);
-                            setDescription(taskDescription);
-                            setStatus(TaskStatus.NEW);
-                        }
-                    };
+                    Task task = new Task();
+                    task.setTitle(taskTitle);
+                    task.setDescription(taskDescription);
+                    task.setStatus(TaskStatus.NEW);
                     taskManager.addNewTask(task);
                     break;
 
@@ -70,21 +66,21 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("Введите ID задачи для удаления:");
+                    System.out.println("Введите ID задачи:");
                     int taskId = scanner.nextInt();
                     taskManager.deleteTask(taskId);
                     break;
 
                 case 5:
-                    System.out.println("Введите ID эпика для удаления:");
-                    int epicIdToDelete = scanner.nextInt();
-                    taskManager.deleteEpic(epicIdToDelete);
+                    System.out.println("Введите ID эпика:");
+                    int epicDeleteId = scanner.nextInt();
+                    taskManager.deleteEpic(epicDeleteId);
                     break;
 
                 case 6:
-                    System.out.println("Введите ID подзадачи для удаления:");
-                    int subtaskIdToDelete = scanner.nextInt();
-                    taskManager.deleteSubtask(subtaskIdToDelete);
+                    System.out.println("Введите ID подзадачи:");
+                    int subtaskDeleteId = scanner.nextInt();
+                    taskManager.deleteSubtask(subtaskDeleteId);
                     break;
 
                 case 7:
@@ -100,11 +96,10 @@ public class Main {
                     break;
 
                 case 10:
-                    System.out.println("Выход из программы.");
                     return;
 
                 default:
-                    System.out.println("Неверный ввод. Попробуйте еще раз.");
+                    System.out.println("Неправильный выбор. Попробуйте снова.");
             }
         }
     }

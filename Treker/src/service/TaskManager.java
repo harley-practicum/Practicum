@@ -1,4 +1,3 @@
-package service;
 import model.Epic;
 import model.Subtask;
 import model.Task;
@@ -60,6 +59,14 @@ public class TaskManager {
         }
     }
 
+    public void deleteSubtasks() {
+        subtasks.clear();
+        for (Epic epic : epics.values()) {
+            epic.clearSubtasks();
+            epic.updateStatus();
+        }
+    }
+
     public Map<Integer, Task> getTasks() {
         return tasks;
     }
@@ -72,4 +79,3 @@ public class TaskManager {
         return subtasks;
     }
 }
-

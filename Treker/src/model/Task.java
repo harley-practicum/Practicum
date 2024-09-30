@@ -1,9 +1,9 @@
 package model;
 
 public class Task {
-    protected int id;
-    protected String title;
-    protected String description;
+    private int id;
+    private String title;
+    private String description;
     protected TaskStatus status;
 
     public int getId() {

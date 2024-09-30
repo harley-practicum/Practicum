@@ -20,7 +20,7 @@ public class Epic extends Task {
         updateStatus();
     }
 
-    public void updateStatus() {
+    private void updateStatus() {
         if (subtasks.isEmpty()) {
             this.status = TaskStatus.NEW;
             return;
@@ -45,6 +45,17 @@ public class Epic extends Task {
         } else {
             this.status = TaskStatus.NEW;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Epic{" +
+                "id=" + getId() +
+                ", title='" + getTitle() + '\'' +
+                ", description='" + getDescription() + '\'' +
+                ", status=" + getStatus() +
+                ", subtasks=" + subtasks +
+                '}';
     }
 }
 
