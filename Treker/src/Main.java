@@ -1,43 +1,111 @@
-import service.TaskManager;
 import model.Epic;
 import model.Subtask;
 import model.Task;
 import model.TaskStatus;
+import service.TaskManager;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = new TaskManager();
+        Scanner scanner = new Scanner(System.in);
 
-        Task task1 = new Task("Задача 1", "Описание задачи 1");
-        Task task2 = new Task("Задача 2", "Описание задачи 2");
-        int taskId1 = taskManager.addNewTask(task1);
-        int taskId2 = taskManager.addNewTask(task2);
+        while (true) {
+            System.out.println("1. Добавить задачу");
+            System.out.println("2. Добавить эпик");
+            System.out.println("3. Добавить подзадачу");
+            System.out.println("4. Удалить задачу");
+            System.out.println("5. Удалить эпик");
+            System.out.println("6. Удалить подзадачу");
+            System.out.println("7. Показать все задачи");
+            System.out.println("8. Показать все эпики");
+            System.out.println("9. Показать все подзадачи");
+            System.out.println("10. Выход");
 
-        Epic epic = new Epic("Эпик 1", "Описание эпика");
-        int epicId = taskManager.addNewEpic(epic);
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-        Subtask subtask1 = new Subtask("Подзадача 1", "Описание подзадачи 1", epicId);
-        Subtask subtask2 = new Subtask("Подзадача 2", "Описание подзадачи 2", epicId);
-        taskManager.addNewSubtask(subtask1);
-        taskManager.addNewSubtask(subtask2);
+            switch (choice) {
+                case 1:
+                    System.out.println("Введите название задачи:");
+                    String taskTitle = scanner.nextLine();
+                    System.out.println("Введите описание задачи:");
+                    String taskDescription = scanner.nextLine();
+                    Task task = new Task() {
+                        // Используйте анонимный класс для создания задачи
+                        {
+                            setTitle(taskTitle);
+                            setDescription(taskDescription);
+                            setStatus(TaskStatus.NEW);
+                        }
+                    };
+                    taskManager.addNewTask(task);
+                    break;
 
-        subtask1.setStatus(TaskStatus.DONE);
-        taskManager.updateSubtask(subtask1);
+                case 2:
+                    System.out.println("Введите название эпика:");
+                    String epicTitle = scanner.nextLine();
+                    System.out.println("Введите описание эпика:");
+                    String epicDescription = scanner.nextLine();
+                    Epic epic = new Epic();
+                    epic.setTitle(epicTitle);
+                    epic.setDescription(epicDescription);
+                    taskManager.addNewEpic(epic);
+                    break;
 
-        System.out.println("Задачи:");
-        for (Task task : taskManager.getTasks()) {
-            System.out.println("Название: " + task.getTitle() + ", Описание: " + task.getDescription());
-        }
+                case 3:
+                    System.out.println("Введите ID эпика:");
+                    int epicId = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Введите название подзадачи:");
+                    String subtaskTitle = scanner.nextLine();
+                    System.out.println("Введите описание подзадачи:");
+                    String subtaskDescription = scanner.nextLine();
+                    Subtask subtask = new Subtask(epicId);
+                    subtask.setTitle(subtaskTitle);
+                    subtask.setDescription(subtaskDescription);
+                    subtask.setStatus(TaskStatus.NEW);
+                    taskManager.addNewSubtask(subtask);
+                    break;
 
-        System.out.println("Эпики:");
-        for (Epic e : taskManager.getEpics()) {
-            System.out.println("Название: " + e.getTitle() + ", Описание: " + e.getDescription());
-        }
+                case 4:
+                    System.out.println("Введите ID задачи для удаления:");
+                    int taskId = scanner.nextInt();
+                    taskManager.deleteTask(taskId);
+                    break;
 
-        System.out.println("Подзадачи для эпика:");
-        for (Subtask subtask : taskManager.getEpicSubtasks(epicId)) {
-            System.out.println("Название: " + subtask.getTitle() + ", Описание: " + subtask.getDescription());
+                case 5:
+                    System.out.println("Введите ID эпика для удаления:");
+                    int epicIdToDelete = scanner.nextInt();
+                    taskManager.deleteEpic(epicIdToDelete);
+                    break;
+
+                case 6:
+                    System.out.println("Введите ID подзадачи для удаления:");
+                    int subtaskIdToDelete = scanner.nextInt();
+                    taskManager.deleteSubtask(subtaskIdToDelete);
+                    break;
+
+                case 7:
+                    taskManager.getTasks().forEach((id, t) -> System.out.println(t));
+                    break;
+
+                case 8:
+                    taskManager.getEpics().forEach((id, e) -> System.out.println(e));
+                    break;
+
+                case 9:
+                    taskManager.getSubtasks().forEach((id, s) -> System.out.println(s));
+                    break;
+
+                case 10:
+                    System.out.println("Выход из программы.");
+                    return;
+
+                default:
+                    System.out.println("Неверный ввод. Попробуйте еще раз.");
+            }
         }
     }
 }
-

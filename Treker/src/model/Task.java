@@ -6,12 +6,6 @@ public class Task {
     protected String description;
     protected TaskStatus status;
 
-    public Task(String title, String description) {
-        this.title = title;
-        this.description = description;
-        this.status = TaskStatus.NEW;
-    }
-
     public int getId() {
         return id;
     }
@@ -42,5 +36,15 @@ public class Task {
 
     public void setStatus(TaskStatus status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                '}';
     }
 }
