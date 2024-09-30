@@ -1,21 +1,23 @@
 package model;
 
 public class Task {
-    public int id;
+    protected int id;
     protected String title;
     protected String description;
     protected TaskStatus status;
 
-    // Конструктор
     public Task(String title, String description) {
         this.title = title;
         this.description = description;
         this.status = TaskStatus.NEW;
     }
 
-    // Сеттеры и геттеры
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {

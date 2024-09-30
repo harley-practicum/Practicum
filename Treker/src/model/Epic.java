@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Epic extends Task {
-    private final List<Subtask> subtasks = new ArrayList<>();
+    private List<Subtask> subtasks = new ArrayList<>();
 
-    // Конструктор
     public Epic(String title, String description) {
         super(title, description);
     }
@@ -24,15 +23,10 @@ public class Epic extends Task {
     }
 
     public void updateStatus() {
-        // Логика обновления статуса эпика на основе статусов подзадач
-        // Например, если все подзадачи DONE, то статус эпика DONE
-    }
-
-    // Метод установки статуса
-    public void setStatus(TaskStatus status) {
-        this.status = status;
+        // Логика обновления статуса эпика
     }
 }
+
 
 
 
