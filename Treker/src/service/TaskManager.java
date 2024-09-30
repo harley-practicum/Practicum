@@ -3,6 +3,7 @@ package service;
 import model.Epic;
 import model.Subtask;
 import model.Task;
+import model.TaskStatus;
 
 import java.util.*;
 
@@ -64,25 +65,31 @@ public class TaskManager {
 
     public void updateTask(Task task) {
         if (tasks.containsKey(task.getId())) {
-            tasks.put(task.getId(), task);
+            Task existingTask = tasks.get(task.getId());
+            existingTask.setTitle(task.getTitle());
+            existingTask.setDescription(task.getDescription());
+            existingTask.setStatus(task.getStatus());
         }
     }
 
     public void updateEpic(Epic epic) {
         if (epics.containsKey(epic.getId())) {
             Epic savedEpic = epics.get(epic.getId());
-            savedEpic.title = epic.getTitle();
-            savedEpic.description = epic.getDescription();
-            savedEpic.updateStatus();
+            savedEpic.setTitle(epic.getTitle());
+            savedEpic.setDescription(epic.getDescription());
+            // Удалён вызов updateStatus()
         }
     }
 
     public void updateSubtask(Subtask subtask) {
         if (subtasks.containsKey(subtask.getId())) {
-            subtasks.put(subtask.getId(), subtask);
+            Subtask existingSubtask = subtasks.get(subtask.getId());
+            existingSubtask.setTitle(subtask.getTitle());
+            existingSubtask.setDescription(subtask.getDescription());
+            existingSubtask.setStatus(subtask.getStatus());
             Epic epic = epics.get(subtask.getEpicId());
             if (epic != null) {
-                epic.updateStatus();
+                epic.updateStatus(); // Обновление статуса эпика
             }
         }
     }
@@ -92,11 +99,25 @@ public class TaskManager {
     }
 
     public void deleteEpic(int id) {
-        epics.remove(id);
+        Epic epic = epics.remove(id);
+        if (epic != null) {
+            // Удаляем все подзадачи, связанные с эпиком
+            for (Subtask subtask : epic.getSubtasks()) {
+                subtasks.remove(subtask.getId());
+            }
+        }
     }
 
     public void deleteSubtask(int id) {
-        subtasks.remove(id);
+        Subtask subtask = subtasks.get(id);
+        if (subtask != null) {
+            Epic epic = epics.get(subtask.getEpicId());
+            subtasks.remove(id);
+            if (epic != null) {
+                epic.getSubtasks().remove(subtask);
+                updateEpicStatus(epic); // Обновление статуса эпика
+            }
+        }
     }
 
     public void deleteTasks() {
@@ -104,11 +125,23 @@ public class TaskManager {
     }
 
     public void deleteSubtasks() {
+        // Очищаем все подзадачи
         subtasks.clear();
+
+        // Очищаем подзадачи у всех эпиков и устанавливаем статус в NEW
+        for (Epic epic : epics.values()) {
+            epic.clearSubtasks(); // Очищаем подзадачи у эпика
+            epic.setStatus(TaskStatus.NEW); // Устанавливаем статус в NEW
+        }
     }
 
     public void deleteEpics() {
         epics.clear();
         subtasks.clear();
+    }
+
+    private void updateEpicStatus(Epic epic) {
+        // Логика обновления статуса эпика
+        epic.updateStatus();
     }
 }

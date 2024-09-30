@@ -1,26 +1,21 @@
 package model;
 
 public class Subtask extends Task {
-    private final int epicId;
+    protected int epicId;
 
+    // Конструктор
     public Subtask(String title, String description, int epicId) {
         super(title, description);
         this.epicId = epicId;
     }
 
+    // Сеттеры и геттеры
     public int getEpicId() {
         return epicId;
     }
 
-    @Override
-    public String toString() {
-        return "Subtask{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", status=" + status +
-                ", epicId=" + epicId +
-                '}';
+    public void setEpicId(int epicId) {
+        this.epicId = epicId;
     }
 }
 

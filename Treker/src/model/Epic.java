@@ -6,6 +6,7 @@ import java.util.List;
 public class Epic extends Task {
     private final List<Subtask> subtasks = new ArrayList<>();
 
+    // Конструктор
     public Epic(String title, String description) {
         super(title, description);
     }
@@ -16,54 +17,20 @@ public class Epic extends Task {
 
     public void addSubtask(Subtask subtask) {
         subtasks.add(subtask);
-        updateStatus();
-    }
-
-    public void removeSubtask(Subtask subtask) {
-        subtasks.remove(subtask);
-        updateStatus();
     }
 
     public void clearSubtasks() {
         subtasks.clear();
-        updateStatus();
     }
 
     public void updateStatus() {
-        if (subtasks.isEmpty()) {
-            this.status = TaskStatus.NEW;
-            return;
-        }
-
-        boolean allDone = true;
-        boolean anyInProgress = false;
-
-        for (Subtask subtask : subtasks) {
-            if (subtask.getStatus() == TaskStatus.IN_PROGRESS) {
-                anyInProgress = true;
-            }
-            if (subtask.getStatus() != TaskStatus.DONE) {
-                allDone = false;
-            }
-        }
-
-        if (allDone) {
-            this.status = TaskStatus.DONE;
-        } else if (anyInProgress) {
-            this.status = TaskStatus.IN_PROGRESS;
-        } else {
-            this.status = TaskStatus.NEW;
-        }
+        // Логика обновления статуса эпика на основе статусов подзадач
+        // Например, если все подзадачи DONE, то статус эпика DONE
     }
 
-    @Override
-    public String toString() {
-        return "Epic{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", status=" + status +
-                '}';
+    // Метод установки статуса
+    public void setStatus(TaskStatus status) {
+        this.status = status;
     }
 }
 
