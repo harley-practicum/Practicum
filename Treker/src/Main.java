@@ -1,106 +1,55 @@
+import service.TaskManager;
 import model.Epic;
 import model.Subtask;
 import model.Task;
 import model.TaskStatus;
-import service.TaskManager;
-
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        TaskManager taskManager = new TaskManager();
-        Scanner scanner = new Scanner(System.in);
+        TaskManager manager = new TaskManager();
 
-        while (true) {
-            System.out.println("1. Добавить задачу");
-            System.out.println("2. Добавить эпик");
-            System.out.println("3. Добавить подзадачу");
-            System.out.println("4. Удалить задачу");
-            System.out.println("5. Удалить эпик");
-            System.out.println("6. Удалить подзадачу");
-            System.out.println("7. Показать все задачи");
-            System.out.println("8. Показать все эпики");
-            System.out.println("9. Показать все подзадачи");
-            System.out.println("10. Выход");
+        // Создание задач
+        Task task1 = new Task("Задача 1", "Описание задачи 1");
+        int taskId1 = manager.addNewTask(task1);
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+        Task task2 = new Task("Задача 2", "Описание задачи 2");
+        int taskId2 = manager.addNewTask(task2);
 
-            switch (choice) {
-                case 1:
-                    System.out.println("Введите название задачи:");
-                    String taskTitle = scanner.nextLine();
-                    System.out.println("Введите описание задачи:");
-                    String taskDescription = scanner.nextLine();
-                    Task task = new Task();
-                    task.setTitle(taskTitle);
-                    task.setDescription(taskDescription);
-                    task.setStatus(TaskStatus.NEW);
-                    taskManager.addNewTask(task);
-                    break;
+        // Создание эпика
+        Epic epic1 = new Epic("Эпик 1", "Описание эпика 1");
+        int epicId1 = manager.addNewEpic(epic1);
 
-                case 2:
-                    System.out.println("Введите название эпика:");
-                    String epicTitle = scanner.nextLine();
-                    System.out.println("Введите описание эпика:");
-                    String epicDescription = scanner.nextLine();
-                    Epic epic = new Epic();
-                    epic.setTitle(epicTitle);
-                    epic.setDescription(epicDescription);
-                    taskManager.addNewEpic(epic);
-                    break;
+        // Создание подзадач
+        Subtask subtask1 = new Subtask("Подзадача 1", "Описание подзадачи 1", epicId1);
+        int subtaskId1 = manager.addNewSubtask(subtask1);
 
-                case 3:
-                    System.out.println("Введите ID эпика:");
-                    int epicId = scanner.nextInt();
-                    scanner.nextLine();
-                    System.out.println("Введите название подзадачи:");
-                    String subtaskTitle = scanner.nextLine();
-                    System.out.println("Введите описание подзадачи:");
-                    String subtaskDescription = scanner.nextLine();
-                    Subtask subtask = new Subtask(epicId);
-                    subtask.setTitle(subtaskTitle);
-                    subtask.setDescription(subtaskDescription);
-                    subtask.setStatus(TaskStatus.NEW);
-                    taskManager.addNewSubtask(subtask);
-                    break;
+        Subtask subtask2 = new Subtask("Подзадача 2", "Описание подзадачи 2", epicId1);
+        int subtaskId2 = manager.addNewSubtask(subtask2);
 
-                case 4:
-                    System.out.println("Введите ID задачи:");
-                    int taskId = scanner.nextInt();
-                    taskManager.deleteTask(taskId);
-                    break;
+        // Обновление статуса задачи
+        task1.setStatus(TaskStatus.DONE);
+        manager.updateTask(task1);
 
-                case 5:
-                    System.out.println("Введите ID эпика:");
-                    int epicDeleteId = scanner.nextInt();
-                    taskManager.deleteEpic(epicDeleteId);
-                    break;
+        // Обновление статуса подзадачи
+        subtask1.setStatus(TaskStatus.DONE);
+        manager.updateSubtask(subtask1);
 
-                case 6:
-                    System.out.println("Введите ID подзадачи:");
-                    int subtaskDeleteId = scanner.nextInt();
-                    taskManager.deleteSubtask(subtaskDeleteId);
-                    break;
+        // Вывод списка задач
+        System.out.println("Список задач:");
+        for (Task task : manager.getTasks()) {
+            System.out.println(task);
+        }
 
-                case 7:
-                    taskManager.getTasks().forEach((id, t) -> System.out.println(t));
-                    break;
-
-                case 8:
-                    taskManager.getEpics().forEach((id, e) -> System.out.println(e));
-                    break;
-
-                case 9:
-                    taskManager.getSubtasks().forEach((id, s) -> System.out.println(s));
-                    break;
-
-                case 10:
-                    return;
-
-                default:
-                    System.out.println("Неправильный выбор. Попробуйте снова.");
+        // Вывод списка эпиков
+        System.out.println("Список эпиков:");
+        for (Epic epic : manager.getEpics()) {
+            System.out.println(epic);
+            System.out.println("Подзадачи эпика:");
+            for (Subtask subtask : manager.getEpicSubtasks(epic.getId())) {
+                System.out.println(subtask);
             }
         }
     }
 }
+
+
