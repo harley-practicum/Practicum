@@ -6,6 +6,8 @@ import model.Subtask;
 
 import java.util.Scanner;
 
+// извините код конечно пришлось порядком переработать но надеюсь от ТЗ 4 и 5 спринта далеко не ушел//
+
 public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = new InMemoryTaskManager();
