@@ -1,30 +1,66 @@
 package model;
 
+import java.util.Objects;
+
 public class Task {
-    private String name;
-    private int id;
-    private TaskStatus status;
+    protected int id; // Уникальный ID задачи
+    protected String title; // Название задачи
+    protected String description; // Описание задачи
+    protected TaskStatus status; // Статус задачи
 
-    // Счетчик для генерации уникальных ID
-    private static int idCounter = 0;
-
-
-    public Task(String name) {
-        this.name = name;
-        this.id = ++idCounter; // Генерация уникального ID
-        this.status = TaskStatus.NEW; // Статус по умолчанию
+    public Task(int id, String title, String description, TaskStatus status) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.status = status;
     }
 
-    // Метод для получения имени задачи
-    public String getName() {
-        return name;
-    }
-
+    // Геттеры и сеттеры
     public int getId() {
         return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public TaskStatus getStatus() {
         return status;
     }
+
+    public void setStatus(TaskStatus status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; // Сравнение ссылок
+        if (!(o instanceof Task)) return false; // Проверка на тип
+        Task task = (Task) o; // Приведение типа
+        return id == task.id; // Сравнение по id
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, status);
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                '}';
+    }
+
+
 }

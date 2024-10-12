@@ -1,22 +1,48 @@
 package service;
 
-import model.Task;
 import model.Epic;
 import model.Subtask;
+import model.Task;
 
 import java.util.Map;
 
 public interface TaskManager {
-    void addTask(Task task); // Добавить задачу
-    void addEpic(Epic epic); // Добавить эпик
-    void addSubtask(Subtask subtask); // Добавить подзадачу
-    Task getTask(int id); // Получить задачу по ID
-    Epic getEpic(int id); // Получить эпик по ID
-    Subtask getSubtask(int id); // Получить подзадачу по ID
-    void removeTask(int id); // Удалить задачу
-    void removeEpic(int id); // Удалить эпик
-    void removeSubtask(int id); // Удалить подзадачу
-    Map<Integer, Task> getAllTasks(); // Получить все задачи
-    Map<Integer, Epic> getAllEpics(); // Получить все эпики
-    Map<Integer, Subtask> getAllSubtasks(); // Получить все подзадачи
+    // Метод для добавления задачи
+    Task addTask(Task task);
+
+    // Метод для добавления эпика
+    Epic addEpic(Epic epic);
+
+    // Метод для добавления подзадачи
+    void addSubtask(Subtask subtask);
+
+    // Метод для получения задачи по ID
+    Task getTask(int id);
+
+    // Метод для получения эпика по ID
+    Epic getEpic(int id);
+
+    // Метод для получения подзадачи по ID
+    Subtask getSubtask(int id);
+
+    // Метод для удаления задачи по ID
+    void removeTask(int id);
+
+    // Метод для удаления эпика по ID
+    void removeEpic(int id);
+
+    // Метод для удаления подзадачи по ID
+    void removeSubtask(int id);
+
+    // Метод для получения всех задач
+    Map<Integer, Task> getAllTasks();
+
+    // Метод для получения всех эпиков
+    Map<Integer, Epic> getAllEpics();
+
+    // Метод для получения всех подзадач
+    Map<Integer, Subtask> getAllSubtasks();
+
+    // Метод для получения менеджера истории
+    HistoryManager getHistoryManager();
 }
