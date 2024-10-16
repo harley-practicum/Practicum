@@ -1,11 +1,17 @@
 package service;
-
-
-// Утилитарный класс для управления задачами
 public class Managers {
 
+    // Метод для получения экземпляра TaskManager
     public static TaskManager getDefault() {
-        HistoryManager historyManager = new InMemoryHistoryManager(); // Создание менеджера истории
-        return new InMemoryTaskManager(historyManager); // Возврат нового менеджера задач с историей
+
+        HistoryManager historyManager = getDefaultHistory();
+
+        return new InMemoryTaskManager(historyManager);
+    }
+
+    // Метод для получения экземпляра HistoryManager
+    public static HistoryManager getDefaultHistory() {
+        // Возвращаем новый экземпляр InMemoryHistoryManager
+        return new InMemoryHistoryManager();
     }
 }

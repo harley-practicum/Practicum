@@ -1,10 +1,12 @@
 package service;
 
-import java.util.LinkedList;
+import model.Task;
+
+import java.util.List;
 
 public interface HistoryManager {
-    void add(Integer id);          // Добавляет ID в историю
-    void remove(Integer id);       // Удаляет ID из истории
-    void clear();                 // Очищает историю
-    LinkedList<Integer> getHistory(); // Получает историю вызовов
+    void add(Task task);
+    List<Task> getHistory();
+    void remove(int id);
+
 }

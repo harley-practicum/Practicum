@@ -1,36 +1,35 @@
 package service;
 
-import java.util.LinkedList;
+import model.Task;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
 
 public class InMemoryHistoryManager implements HistoryManager {
-    private final LinkedList<Integer> history; // Поле теперь final
-
-    public InMemoryHistoryManager() {
-        history = new LinkedList<>(); // Инициализируем список
-    }
+    private static final int MAX_HISTORY_SIZE = 10; // Максимальный размер истории
+    private final Deque<Task> history = new ArrayDeque<>(); // Используем Deque для хранения истории
 
     @Override
-    public void add(Integer id) {
-        if (!history.contains(id)) { // Проверяем, если ID уже в истории
-            if (history.size() >= 10) { // Проверяем, если размер истории превышает 10
-                history.removeFirst(); // Удаляем самый старый элемент
+    public void add(Task task) {
+        if (task != null) {
+            // Если задача уже есть в истории, удаляем её
+            history.remove(task);
+            // Добавляем новую задачу в конец очереди
+            history.addLast(task);
+            // Если размер истории превышает максимум, удаляем старейшую задачу
+            if (history.size() > MAX_HISTORY_SIZE) {
+                history.removeFirst(); // Удаляем задачу, которая была добавлена первой
             }
-            history.add(id); // Добавляем ID в историю
         }
     }
-
+    public void remove(int taskId) {
+        history.removeIf(task -> task.getId() == taskId); // Удаление задачи по ID из истории
+    }
     @Override
-    public void remove(Integer id) {
-        history.remove(id); // Удаляем ID из истории
+    public List<Task> getHistory() {
+        return new ArrayList<>(history);
     }
 
-    @Override
-    public void clear() {
-        history.clear(); // Очищаем историю
-    }
-
-    @Override
-    public LinkedList<Integer> getHistory() {
-        return new LinkedList<>(history); // Возвращаем копию истории
-    }
 }

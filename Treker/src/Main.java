@@ -1,90 +1,144 @@
-import model.Epic;
-import model.Subtask;
-import model.Task;
-import model.TaskStatus;
-import service.InMemoryTaskManager;
+import model.*;
+import service.Managers;
+import service.TaskManager;
+import service.HistoryManager;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static InMemoryTaskManager taskManager = new InMemoryTaskManager();
-    private static Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
-        int choice;
+        TaskManager taskManager = Managers.getDefault(); // Создание экземпляра менеджера задач
+        HistoryManager historyManager = Managers.getDefaultHistory(); // Создание экземпляра менеджера истории
+        Scanner scanner = new Scanner(System.in); // Создание сканера для ввода пользователя
 
-        do {
+        while (true) {
             System.out.println("Выберите действие:");
             System.out.println("1. Добавить задачу");
-            System.out.println("2. Добавить эпик");
-            System.out.println("3. Добавить подзадачу");
-            System.out.println("4. Получить все задачи");
-            System.out.println("5. Получить все эпики");
-            System.out.println("6. Получить все подзадачи");
-            System.out.println("7. Показать историю");
-            System.out.println("0. Выход");
-            choice = scanner.nextInt();
-            scanner.nextLine(); // Очистка буфера ввода
+            System.out.println("2. Добавить подзадачу");
+            System.out.println("3. Добавить эпик");
+            System.out.println("4. Получить задачу по ID");
+            System.out.println("5. Получить эпик по ID");
+            System.out.println("6. Получить подзадачу по ID");
+            System.out.println("7. Вывести все задачи");
+            System.out.println("8. Показать историю просмотренных задач");
+            System.out.println("9. Выход");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Очистка буфера
 
             switch (choice) {
-                case 1:
+                case 1: // Добавление задачи
+                    System.out.println("Введите ID задачи:");
+                    int taskId = scanner.nextInt();
+                    scanner.nextLine(); // Очистка буфера
                     System.out.println("Введите название задачи:");
                     String taskTitle = scanner.nextLine();
                     System.out.println("Введите описание задачи:");
                     String taskDescription = scanner.nextLine();
-                    Task task = new Task(taskManager.getNextId(), taskTitle, taskDescription, TaskStatus.NEW);
-                    taskManager.addTask(task);
+                    System.out.println("Введите статус задачи (NEW, IN_PROGRESS, DONE):");
+                    Status taskStatus = Status.valueOf(scanner.nextLine().toUpperCase());
+
+                    Task task = new Task(taskId, taskTitle, taskDescription, taskStatus);
+                    taskManager.addNewTask(task);
+                    System.out.println("Задача добавлена.");
                     break;
 
-                case 2:
-                    System.out.println("Введите название эпика:");
-                    String epicTitle = scanner.nextLine();
-                    System.out.println("Введите описание эпика:");
-                    String epicDescription = scanner.nextLine();
-                    Epic epic = new Epic(taskManager.getNextId(), epicTitle, epicDescription, TaskStatus.NEW);
-                    taskManager.addEpic(epic);
-                    break;
-
-                case 3:
+                case 2: // Добавление подзадачи
+                    System.out.println("Введите ID подзадачи:");
+                    int subtaskId = scanner.nextInt();
+                    scanner.nextLine(); // Очистка буфера
                     System.out.println("Введите название подзадачи:");
                     String subtaskTitle = scanner.nextLine();
                     System.out.println("Введите описание подзадачи:");
                     String subtaskDescription = scanner.nextLine();
-                    System.out.println("Введите ID эпика, к которому относится подзадача:");
+                    System.out.println("Введите статус подзадачи (NEW, IN_PROGRESS, DONE):");
+                    Status subtaskStatus = Status.valueOf(scanner.nextLine().toUpperCase());
+                    System.out.println("Введите ID эпика:");
                     int epicId = scanner.nextInt();
-                    scanner.nextLine(); // Очистка буфера ввода
-                    Subtask subtask = new Subtask(taskManager.getNextId(), subtaskTitle, subtaskDescription, TaskStatus.NEW, epicId);
-                    taskManager.addSubtask(subtask);
+
+                    Subtask subtask = new Subtask(subtaskId, subtaskTitle, subtaskDescription, subtaskStatus, epicId);
+                    taskManager.addNewSubtask(subtask);
+                    System.out.println("Подзадача добавлена.");
                     break;
 
-                case 4:
+                case 3: // Добавление эпика
+                    System.out.println("Введите ID эпика:");
+                    int epicTaskId = scanner.nextInt();
+                    scanner.nextLine(); // Очистка буфера
+                    System.out.println("Введите название эпика:");
+                    String epicTitle = scanner.nextLine();
+                    System.out.println("Введите описание эпика:");
+                    String epicDescription = scanner.nextLine();
+                    System.out.println("Введите статус эпика (NEW, IN_PROGRESS, DONE):");
+                    Status epicStatus = Status.valueOf(scanner.nextLine().toUpperCase());
+
+                    Epic epic = new Epic(epicTaskId, epicTitle, epicDescription, epicStatus);
+                    taskManager.addNewEpic(epic);
+                    System.out.println("Эпик добавлен.");
+                    break;
+
+                case 4: // Получение задачи по ID
+                    System.out.println("Введите ID задачи:");
+                    int idToGet = scanner.nextInt();
+                    Task retrievedTask = taskManager.getTask(idToGet);
+                    if (retrievedTask != null) {
+                        historyManager.add(retrievedTask); // Добавление в историю
+                        System.out.println(retrievedTask);
+                    } else {
+                        System.out.println("Задача с таким ID не найдена.");
+                    }
+                    break;
+
+                case 5: // Получение эпика по ID
+                    System.out.println("Введите ID эпика:");
+                    int epicToGet = scanner.nextInt();
+                    Epic retrievedEpic = taskManager.getEpic(epicToGet);
+                    if (retrievedEpic != null) {
+                        historyManager.add(retrievedEpic); // Добавление в историю
+                        System.out.println(retrievedEpic);
+                    } else {
+                        System.out.println("Эпик с таким ID не найден.");
+                    }
+                    break;
+
+                case 6: // Получение подзадачи по ID
+                    System.out.println("Введите ID подзадачи:");
+                    int subtaskToGet = scanner.nextInt();
+                    Subtask retrievedSubtask = taskManager.getSubtask(subtaskToGet);
+                    if (retrievedSubtask != null) {
+                        historyManager.add(retrievedSubtask); // Добавление в историю
+                        System.out.println(retrievedSubtask);
+                    } else {
+                        System.out.println("Подзадача с таким ID не найдена.");
+                    }
+                    break;
+
+                case 7: // Вывод всех задач
+                    List<Task> allTasks = taskManager.getAllTask();
                     System.out.println("Все задачи:");
-                    taskManager.getAllTasks().forEach((id, t) -> System.out.println(t));
+                    for (Task t : allTasks) {
+                        System.out.println(t);
+                    }
                     break;
 
-                case 5:
-                    System.out.println("Все эпики:");
-                    taskManager.getAllEpics().forEach((id, e) -> System.out.println(e));
+                case 8: // Показать историю просмотренных задач
+                    List<Task> history = historyManager.getHistory();
+                    System.out.println("История просмотренных задач:");
+                    for (Task h : history) {
+                        System.out.println(h);
+                    }
                     break;
 
-                case 6:
-                    System.out.println("Все подзадачи:");
-                    taskManager.getAllSubtasks().forEach((id, s) -> System.out.println(s));
-                    break;
-
-                case 7:
-                    System.out.println("История:");
-                    taskManager.getHistoryManager().getHistory().forEach(id -> System.out.println("ID: " + id));
-                    break;
-
-                case 0:
+                case 9: // Выход
                     System.out.println("Выход из программы.");
-                    break;
+                    scanner.close();
+                    return;
 
                 default:
-                    System.out.println("Некорректный выбор. Попробуйте еще раз.");
+                    System.out.println("Неверный выбор, попробуйте снова.");
                     break;
             }
-        } while (choice != 0);
+        }
     }
 }
