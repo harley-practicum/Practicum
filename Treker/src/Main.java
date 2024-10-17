@@ -22,7 +22,7 @@ public class Main {
             System.out.println("6. Получить подзадачу по ID");
             System.out.println("7. Вывести все задачи");
             System.out.println("8. Показать историю просмотренных задач");
-            System.out.println("9. Выход");
+            System.out.println("0. Выход");
 
             int choice = scanner.nextInt();
             scanner.nextLine(); // Очистка буфера
@@ -115,8 +115,8 @@ public class Main {
                     break;
 
                 case 7: // Вывод всех задач
-                    List<Task> allTasks = taskManager.getAllTask();
-                    System.out.println("Все задачи:");
+                    List<Task> allTasks = taskManager.getTasks(); // Получаем список всех задач
+                    System.out.println("Список всех задач:");
                     for (Task t : allTasks) {
                         System.out.println(t);
                     }
