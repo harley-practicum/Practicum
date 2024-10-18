@@ -1,7 +1,6 @@
 package service;
 
 import model.Epic;
-import model.Status;
 import model.Subtask;
 import model.Task;
 
@@ -25,9 +24,10 @@ public interface TaskManager {
     void deleteTask(int id);
     void deleteSubtask(int id);
     List<Task> getHistory();
+    void deleteAllTasks();
+    void deleteAllEpics();
+    void deleteAllSubtasks();
 
 
-
-    void updateStatus(int id, Status newStatus);
 
 }

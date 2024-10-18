@@ -7,10 +7,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    //если вдруг универсальный метод обновления вам чем то не понравится ну не губите пожалуйста
     public static void main(String[] args) {
-        TaskManager taskManager = Managers.getDefault(); // Создание экземпляра менеджера задач
-        HistoryManager historyManager = Managers.getDefaultHistory(); // Создание экземпляра менеджера истории
-        Scanner scanner = new Scanner(System.in); // Создание сканера для ввода пользователя
+        TaskManager taskManager = Managers.getDefault();
+        HistoryManager historyManager = Managers.getDefaultHistory();
+        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println("Выберите действие:");

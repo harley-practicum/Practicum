@@ -16,7 +16,6 @@ public class Epic extends Task {
     public List<Subtask> getSubtasks() {
         return subtasks;
     }
-
     public void removeSubtask(int id) {
         Subtask subtaskToRemove = null;
         for (Subtask subtask : subtasks) {
@@ -28,13 +27,7 @@ public class Epic extends Task {
         if (subtaskToRemove != null) {
             subtasks.remove(subtaskToRemove); // Удаляем подзадачу из списка
         }
-
     }
-
-
-
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
