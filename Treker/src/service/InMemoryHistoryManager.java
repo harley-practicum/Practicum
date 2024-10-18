@@ -1,19 +1,18 @@
 package service;
 
 import model.Task;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+
+
 public class InMemoryHistoryManager implements HistoryManager {
     private static final int MAX_HISTORY_SIZE = 10; // Максимальный размер истории
     private final LinkedList<Task> history = new LinkedList<>(); // Используем LinkedList для хранения истории
-
     @Override
     public void add(Task task) {
         if (task != null) {
-            // Если задача уже есть в истории, удаляем её
             history.remove(task);
             // Добавляем новую задачу в конец списка
             history.addLast(task);
@@ -27,5 +26,6 @@ public class InMemoryHistoryManager implements HistoryManager {
     public List<Task> getHistory() {
         return new ArrayList<>(history);
     }
-
 }
+
+

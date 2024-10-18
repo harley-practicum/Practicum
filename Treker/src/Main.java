@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    //если вдруг универсальный метод обновления вам чем то не понравится ну не губите пожалуйста
     public static void main(String[] args) {
         TaskManager taskManager = Managers.getDefault();
         HistoryManager historyManager = Managers.getDefaultHistory();
@@ -21,8 +20,10 @@ public class Main {
             System.out.println("4. Получить задачу по ID");
             System.out.println("5. Получить эпик по ID");
             System.out.println("6. Получить подзадачу по ID");
-            System.out.println("7. Вывести все задачи");
-            System.out.println("8. Показать историю просмотренных задач");
+            System.out.println("7. Показать историю просмотренных задач");
+            System.out.println("8. Удалить задачу по ID");
+            System.out.println("9. Удалить подзадачу по ID");
+            System.out.println("10. Удалить эпик по ID");
             System.out.println("0. Выход");
 
             int choice = scanner.nextInt();
@@ -115,15 +116,7 @@ public class Main {
                     }
                     break;
 
-                case 7: // Вывод всех задач
-                    List<Task> allTasks = taskManager.getTasks(); // Получаем список всех задач
-                    System.out.println("Список всех задач:");
-                    for (Task t : allTasks) {
-                        System.out.println(t);
-                    }
-                    break;
-
-                case 8: // Показать историю просмотренных задач
+                case 7: // Показать историю просмотренных задач
                     List<Task> history = historyManager.getHistory();
                     System.out.println("История просмотренных задач:");
                     for (Task h : history) {
@@ -131,7 +124,28 @@ public class Main {
                     }
                     break;
 
-                case 9: // Выход
+                case 8: // Удалить задачу по ID
+                    System.out.println("Введите ID задачи для удаления:");
+                    int taskIdToDelete = scanner.nextInt();
+                    taskManager.deleteTask(taskIdToDelete);
+                    System.out.println("Задача с ID " + taskIdToDelete + " удалена.");
+                    break;
+
+                case 9: // Удалить подзадачу по ID
+                    System.out.println("Введите ID подзадачи для удаления:");
+                    int subtaskIdToDelete = scanner.nextInt();
+                    taskManager.deleteSubtask(subtaskIdToDelete);
+                    System.out.println("Подзадача с ID " + subtaskIdToDelete + " удалена.");
+                    break;
+
+                case 10: // Удалить эпик по ID
+                    System.out.println("Введите ID эпика для удаления:");
+                    int epicIdToDelete = scanner.nextInt();
+                    taskManager.deleteEpic(epicIdToDelete);
+                    System.out.println("Эпик с ID " + epicIdToDelete + " удален.");
+                    break;
+
+                case 0: // Выход
                     System.out.println("Выход из программы.");
                     scanner.close();
                     return;

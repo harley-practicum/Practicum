@@ -13,11 +13,15 @@ public class InMemoryTaskManager implements TaskManager {
     private final Map<Integer, Task> tasks = new HashMap<>(); // Задачи
     private final Map<Integer, Epic> epics = new HashMap<>(); // Эпики
     private final Map<Integer, Subtask> subtasks = new HashMap<>(); // Подзадачи
+
     private int nextId = 1; // Счетчик для ID
     protected HistoryManager historyManager; // Менеджер истории
     public InMemoryTaskManager(HistoryManager historyManager) {
         this.historyManager = historyManager;
             }
+    public int getNextId() {
+        return nextId;
+    }
     @Override
     public int addNewTask(Task task) {
         int id = nextId++; // Получаем следующий уникальный ID
@@ -188,7 +192,6 @@ public class InMemoryTaskManager implements TaskManager {
         }
         epics.remove(id);// Удаляем сам эпик
     }
-
     @Override
     public void deleteAllTasks() {
         if (tasks.isEmpty()) {// Проверяем, есть ли задачи
