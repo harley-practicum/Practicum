@@ -2,10 +2,8 @@ import model.*;
 import service.Managers;
 import service.TaskManager;
 import service.HistoryManager;
-
 import java.util.List;
 import java.util.Scanner;
-
 
 public class Main {
     public static void main(String[] args) {

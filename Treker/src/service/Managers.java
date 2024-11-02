@@ -1,6 +1,5 @@
 package service;
 public class Managers {
-
     // Метод для получения экземпляра TaskManager
     public static TaskManager getDefault() {
 

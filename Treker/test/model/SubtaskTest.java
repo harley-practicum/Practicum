@@ -1,12 +1,9 @@
 package model;
-
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class SubtaskTest {
-
     @Test
     void testSubtaskCreation() {
         Subtask subtask = new Subtask(1, "Subtask 1", "Description of subtask 1", Status.NEW, 100);
