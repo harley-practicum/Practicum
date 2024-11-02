@@ -5,7 +5,6 @@ import model.Subtask;
 import model.Task;
 import java.util.*;
 
-
 public class InMemoryTaskManager implements TaskManager {
     private final Map<Integer, Task> tasks = new HashMap<>(); // Задачи
     private final Map<Integer, Epic> epics = new HashMap<>(); // Эпики

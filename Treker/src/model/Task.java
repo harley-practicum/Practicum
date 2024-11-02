@@ -1,5 +1,6 @@
 package model;
 
+
 public class Task {
 
     protected int id; // Уникальный ID задачи

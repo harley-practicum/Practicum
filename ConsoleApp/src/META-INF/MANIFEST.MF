@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Created-By: 21.0.10 (Amazon.com Inc.)
-Main-Class: DecoderTest
-
