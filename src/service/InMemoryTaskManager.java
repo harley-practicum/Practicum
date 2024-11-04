@@ -242,6 +242,7 @@ public class InMemoryTaskManager implements TaskManager {
         subtasks.clear(); // Очищаем коллекцию подзадач
         System.out.println("Все подзадачи удалены, статус эпиков обновлен.");
     }
+    
     @Override
     public List<Task> getHistory() {
         return historyManager.getHistory(); // Возвращаем историю задач из менеджера истории
