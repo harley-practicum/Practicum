@@ -16,7 +16,7 @@ public class InMemoryTaskManager implements TaskManager {
     public InMemoryTaskManager(HistoryManager historyManager) {
         this.historyManager = historyManager;
             }
-    public int getNextId() {
+    private int getNextId() {
         return nextId;
     }
     @Override
@@ -139,20 +139,35 @@ public class InMemoryTaskManager implements TaskManager {
         // Обновляем параметры эпика, кроме статуса
         existingEpic.setTitle(epic.getTitle());  // Обновляем название
         existingEpic.setDescription(epic.getDescription());  // Обновляем описание
-        updateEpicStatus(existingEpic.getId());// Обновляем статус эпика, основываясь на статусах подзадач
     }
     @Override
     public void updateSubtask(Subtask subtask) {
-        if (subtask == null || !subtasks.containsKey(subtask.getId())) {// Проверяем, существует ли подзадача с заданным ID
-            throw new NoSuchElementException("Subtask with id " + subtask.getId() + " does not exist.");
+        if (subtask == null || !subtasks.containsKey(subtask.getId())) { // Проверяем, существует ли подзадача с заданным ID
+            throw new NoSuchElementException("Подзадача с ID " + subtask.getId() + " не существует.");
         }
-        Subtask existingSubtask = subtasks.get(subtask.getId());
-        existingSubtask.setTitle(subtask.getTitle()); // Обновляем название
-        existingSubtask.setDescription(subtask.getDescription()); // Обновляем описание
-        existingSubtask.setStatus(subtask.getStatus()); // Обновляем статус
-        int epicId = existingSubtask.getEpicId(); // Получаем ID эпика из подзадачи
+
+        Subtask sub = subtasks.get(subtask.getId()); // Получаем существующую подзадачу
+        sub.setTitle(subtask.getTitle()); // Обновляем название подзадачи
+        sub.setDescription(subtask.getDescription()); // Обновляем описание подзадачи
+        sub.setStatus(subtask.getStatus()); // Обновляем статус подзадачи
+
+        int epicId = sub.getEpicId(); // Получаем ID эпика из подзадачи
+        Epic epic = epics.get(epicId); // Получаем эпик по ID
+
+        if (epic != null) {
+            // Находим подзадачу в списке эпика и обновляем её
+            for (Subtask subtaskInEpic : epic.getSubtasks()) {
+                if (subtaskInEpic.getId() == sub.getId()) {
+                    subtaskInEpic.setTitle(sub.getTitle());
+                    subtaskInEpic.setDescription(sub.getDescription());
+                    subtaskInEpic.setStatus(sub.getStatus());
+                    break;
+                }
+            }
+        }
         updateEpicStatus(epicId); // Пересчитываем статус эпика
     }
+
     @Override
     public void deleteTask(int id) {
         // Проверяем, существует ли задача с данным ID
@@ -200,70 +215,72 @@ public class InMemoryTaskManager implements TaskManager {
     }
     @Override
     public void deleteAllEpics() {
-        if (epics.isEmpty()) {// Проверяем, есть ли вообще эпики в коллекции
+        if (epics.isEmpty()) { // Проверяем, есть ли вообще эпики в коллекции
             System.out.println("Нет эпиков для удаления.");
             return;
         }
-        for (Epic epic : epics.values()) {
-            List<Subtask> subtaskList = epic.getSubtasks();// Получаем список подзадач эпика
-            if (!subtaskList.isEmpty()) {// Проверяем, есть ли у эпика подзадачи
-                for (Subtask subtask : subtaskList) {// Удаляем каждую подзадачу, связанную с эпиком
-                    subtasks.remove(subtask.getId()); // Удаляем подзадачу по её ID
-                }
-            }
-        }
+
+        subtasks.clear(); // Удаляем все подзадачи, так как они не могут существовать без эпиков
         epics.clear(); // Удаляем все эпики из коллекции
+
         System.out.println("Все эпики и связанные с ними подзадачи удалены.");
     }
+
     @Override
     public void deleteAllSubtasks() {
         if (subtasks.isEmpty()) {
-            System.out.println("Нет подзадач для удаления."); // Сообщаем, если подзадач нет
+            System.out.println("Нет подзадач для удаления."); // Проверка на наличие подзадач
             return;
         }
+
+        // Удаляем все подзадачи у каждого эпика и обновляем их статус
+        for (Epic epic : epics.values()) {
+            epic.getSubtasks().clear(); // Очищаем список подзадач эпика
+            updateEpicStatus(epic.getId()); // Обновляем статус эпика
+        }
+
         subtasks.clear(); // Очищаем коллекцию подзадач
-        System.out.println("Все подзадачи удалены."); // Подтверждаем успешное удаление
+        System.out.println("Все подзадачи удалены, статус эпиков обновлен.");
     }
     @Override
     public List<Task> getHistory() {
         return historyManager.getHistory(); // Возвращаем историю задач из менеджера истории
     }
 
-    private void updateEpicStatus(int epicId) {
-        Epic epic = epics.get(epicId); // Получаем эпик по ID
-        if (epic == null) {
-            return; // Если эпик не найден, выходим
-        }
-        List<Subtask> subtasks = epic.getSubtasks(); // Получаем список подзадач
-        if (subtasks.isEmpty()) {
-            epic.setStatus(Status.NEW); // Если подзадач нет, устанавливаем статус NEW
-            return;
-        }
-        int newCount = 0;
-        int inProgressCount = 0;
-        int doneCount = 0;
-        // Перебираем все подзадачи и считаем их статусы
-        for (Subtask subtask : subtasks) {
-            switch (subtask.getStatus()) {
-                case NEW:
-                    newCount++;
-                    break;
-                case IN_PROGRESS:
-                    inProgressCount++;
-                    break;
-                case DONE:
-                    doneCount++;
-                    break;
+        private void updateEpicStatus(int epicId) {
+            Epic epic = epics.get(epicId); // Получаем эпик по ID
+            if (epic == null) {
+                return; // Если эпик не найден, выходим
+            }
+            List<Subtask> subtasks = epic.getSubtasks(); // Получаем список подзадач
+            if (subtasks.isEmpty()) {
+                epic.setStatus(Status.NEW); // Если подзадач нет, устанавливаем статус NEW
+                return;
+            }
+            int newCount = 0;
+            int inProgressCount = 0;
+            int doneCount = 0;
+            // Перебираем все подзадачи и считаем их статусы
+            for (Subtask subtask : subtasks) {
+                switch (subtask.getStatus()) {
+                    case NEW:
+                        newCount++;
+                        break;
+                    case IN_PROGRESS:
+                        inProgressCount++;
+                        break;
+                    case DONE:
+                        doneCount++;
+                        break;
+                }
+            }
+            // Обновляем статус эпика на основе подсчитанных значений
+            if (doneCount == subtasks.size()) {
+                epic.setStatus(Status.DONE); // Все подзадачи выполнены
+            } else if (inProgressCount > 0) {
+                epic.setStatus(Status.IN_PROGRESS); // Есть хотя бы одна подзадача в процессе
+            } else {
+                epic.setStatus(Status.NEW); // Все подзадачи новые
             }
         }
-
-        // Обновляем статус эпика на основе подсчитанных значений
-        if (doneCount == subtasks.size()) {
-            epic.setStatus(Status.DONE); // Все подзадачи выполнены
-        } else if (inProgressCount > 0) {
-            epic.setStatus(Status.IN_PROGRESS); // Есть хотя бы одна подзадача в процессе
-        } else {
-            epic.setStatus(Status.NEW); // Все подзадачи новые
-        }
     }
-}
