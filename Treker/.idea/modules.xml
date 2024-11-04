@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Treker.iml" filepath="$PROJECT_DIR$/Treker.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/m1-t12-hotkeys.iml" filepath="$PROJECT_DIR$/m1-t12-hotkeys.iml" />
->>>>>>> a862220e0a0dca7115d8b421b1051630564d5d39
     </modules>
   </component>
 </project>
