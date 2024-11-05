@@ -35,7 +35,7 @@ public class Main {
         taskManager.addNewSubtask(subtask3);
 
         // Запрос созданных задач в разном порядке
-        int[] idsToGet = {1, 2, 3, 5, 6, 7}; // Порядок запроса задач
+        int[] idsToGet = {1, 3, 2, 5, 7, 6}; // Порядок запроса задач
         for (int id : idsToGet) {
             try {
                 switch (id) {

@@ -1,0 +1,1754 @@
+Index: Treker/.idea/uiDesigner.xml
+===================================================================
+diff --git a/Treker/.idea/uiDesigner.xml b/Treker/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/Treker/.idea/uiDesigner.xml	
++++ /dev/null	
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: Treker/test/service/InMemoryHistoryManagerTest.java
+===================================================================
+diff --git a/Treker/test/service/InMemoryHistoryManagerTest.java b/Treker/test/service/InMemoryHistoryManagerTest.java
+deleted file mode 100644
+--- a/Treker/test/service/InMemoryHistoryManagerTest.java	
++++ /dev/null	
+@@ -1,73 +0,0 @@
+-package service;
+-import model.Status;
+-import model.Task;
+-import org.junit.jupiter.api.BeforeEach;
+-import org.junit.jupiter.api.Test;
+-import java.util.List;
+-import static org.junit.jupiter.api.Assertions.*;
+-
+-
+-class InMemoryHistoryManagerTest {
+-    private InMemoryHistoryManager historyManager;
+-
+-    @BeforeEach
+-    void setUp() {
+-        historyManager = new InMemoryHistoryManager();
+-    }
+-
+-    @Test
+-    void addTask_ShouldAddTaskToHistory() {
+-        Task task = new Task(1, "Test Task", "Description", Status.NEW);
+-        historyManager.add(task);
+-
+-        List<Task> history = historyManager.getHistory();
+-        assertEquals(1, history.size());
+-        assertEquals(task, history.get(0));
+-    }
+-
+-    @Test
+-    void addTask_ShouldRemovePreviousInstanceOfTask() {
+-        Task task1 = new Task(1, "Task 1", "Description 1", Status.NEW);
+-        Task task2 = new Task(1, "Task 1", "Description 1", Status.NEW); // Идентичная задача
+-        historyManager.add(task1);
+-        historyManager.add(task2); // Добавляем ту же задачу снова
+-
+-        List<Task> history = historyManager.getHistory();
+-        assertEquals(1, history.size()); // История должна содержать только одну задачу
+-        assertEquals(task2, history.get(0)); // Проверяем, что в истории осталась последняя добавленная задача
+-    }
+-
+-    @Test
+-    void addTask_ShouldLimitHistorySize() {
+-        // Добавляем 12 задач
+-        for (int i = 0; i < 12; i++) {
+-            historyManager.add(new Task(i + 1, "Task " + (i + 1), "Description " + (i + 1), Status.NEW));
+-        }
+-
+-        // Получаем историю
+-        List<Task> history = historyManager.getHistory();
+-
+-        // Проверяем, что история содержит ровно 10 задач
+-        assertEquals(10, history.size(), "История должна содержать ровно 10 задач.");
+-
+-        // Проверяем, что самые старые задачи были удалены
+-        assertEquals(3, history.get(0).getId(), "Самая старая задача должна быть Task 3");
+-        assertEquals(4, history.get(1).getId(), "Вторая задача в истории должна быть Task 4");
+-        assertEquals(12, history.get(9).getId(), "Последняя задача в истории должна быть Task 12");
+-    }
+-
+-
+-    @Test
+-    void addTask_ShouldNotAddNullTask() {
+-        historyManager.add(null); // Добавляем null задачу
+-
+-        List<Task> history = historyManager.getHistory();
+-        assertTrue(history.isEmpty()); // История должна оставаться пустой
+-    }
+-
+-    @Test
+-    void getHistory_ShouldReturnEmptyListWhenNoTasks() {
+-        List<Task> history = historyManager.getHistory();
+-        assertTrue(history.isEmpty()); // При отсутствии задач история должна быть пустой
+-    }
+-}
+Index: Treker/src/service/InMemoryHistoryManager.java
+===================================================================
+diff --git a/Treker/src/service/InMemoryHistoryManager.java b/Treker/src/service/InMemoryHistoryManager.java
+deleted file mode 100644
+--- a/Treker/src/service/InMemoryHistoryManager.java	
++++ /dev/null	
+@@ -1,28 +0,0 @@
+-package service;
+-import model.Task;
+-import java.util.ArrayList;
+-import java.util.LinkedList;
+-import java.util.List;
+-
+-public class InMemoryHistoryManager implements HistoryManager {
+-    private static final int MAX_HISTORY_SIZE = 10; // Максимальный размер истории
+-    private final LinkedList<Task> history = new LinkedList<>(); // Используем LinkedList для хранения истории
+-    @Override
+-    public void add(Task task) {
+-        if (task != null) {
+-            history.remove(task);
+-            // Добавляем новую задачу в конец списка
+-            history.addLast(task);
+-            // Если размер истории превышает максимум, удаляем старейшую задачу
+-            if (history.size() > MAX_HISTORY_SIZE) {
+-                history.removeFirst(); // Удаляем задачу, которая была добавлена первой
+-            }
+-        }
+-    }
+-    @Override
+-    public List<Task> getHistory() {
+-        return new ArrayList<>(history);
+-    }
+-}
+-
+-
+Index: Treker/test/service/InMemoryTaskManagerTest.java
+===================================================================
+diff --git a/Treker/test/service/InMemoryTaskManagerTest.java b/Treker/test/service/InMemoryTaskManagerTest.java
+deleted file mode 100644
+--- a/Treker/test/service/InMemoryTaskManagerTest.java	
++++ /dev/null	
+@@ -1,220 +0,0 @@
+-package service;
+-import model.Epic;
+-import model.Status;
+-import model.Subtask;
+-import model.Task;
+-import org.junit.jupiter.api.BeforeEach;
+-import org.junit.jupiter.api.Test;
+-import java.util.List;
+-import java.util.NoSuchElementException;
+-import static org.junit.jupiter.api.Assertions.*;
+-
+-
+-class InMemoryTaskManagerTest {
+-    private InMemoryTaskManager taskManager;
+-
+-    @BeforeEach
+-    void setUp() {
+-        taskManager = new InMemoryTaskManager(new InMemoryHistoryManager()); // Инициализируем менеджер задач с историей
+-        // Очистка всех задач
+-        taskManager.deleteAllTasks();
+-        taskManager.deleteAllEpics();
+-        taskManager.deleteAllSubtasks();
+-    }
+-    @Test
+-    void simpleTestForSubtaskId() {
+-        Epic epic = new Epic(0, "Simple Epic", "Simple Description", Status.NEW);
+-        int epicId = taskManager.addNewEpic(epic);
+-
+-        Subtask subtask = new Subtask(0, "Simple Subtask", "Simple Description", Status.NEW, epicId);
+-        int subtaskId = taskManager.addNewSubtask(subtask);
+-
+-        System.out.println("Subtask ID: " + subtaskId); // Выводим ID подзадачи
+-        assertEquals(2, subtaskId); // Проверяем, что ID равен 2
+-    }
+-
+-    @Test
+-    void addNewTask_ShouldAddTaskAndReturnId() {
+-        Task task = new Task(0, "Task Title", "Task Description", Status.NEW);
+-        int taskId = taskManager.addNewTask(task);
+-        assertEquals(1, taskId); // ID должен быть 1
+-        assertEquals(task, taskManager.getTask(taskId)); // Проверяем, что задача добавлена
+-    }
+-
+-    @Test
+-    void deleteEpic_ShouldRemoveEpicAndItsSubtasks() {
+-        // Создаем эпик с необходимыми параметрами
+-        Epic epic = new Epic(0, "Epic Title", "Epic Description", Status.NEW);
+-        int epicId = taskManager.addNewEpic(epic);
+-
+-        // Создаем подзадачу, связанную с эпиком
+-        Subtask subtask = new Subtask(0, "Subtask Title", "Subtask Description", Status.NEW, epicId);
+-        taskManager.addNewSubtask(subtask);
+-
+-        // Удаляем эпик
+-        taskManager.deleteEpic(epicId);
+-
+-        // Проверяем, что выбрасывается исключение, когда мы пытаемся получить удаленный эпик
+-        Exception exception = assertThrows(NoSuchElementException.class, () -> taskManager.getEpic(epicId));
+-        assertEquals("Epic with id " + epicId + " does not exist.", exception.getMessage());
+-
+-        // Проверяем, что подзадачи также были удалены
+-        assertEquals(0, taskManager.getSubtasks().size());
+-    }
+-
+-    @Test
+-    void addNewSubtask_ShouldAddSubtaskAndUpdateEpic() {
+-        Epic epic = new Epic(0, "Epic Title", "Epic Description", Status.NEW); // Создание эпика с 4 аргументами
+-        int epicId = taskManager.addNewEpic(epic);
+-
+-        Subtask subtask = new Subtask(0, "Subtask Title", "Subtask Description", Status.NEW, epicId);
+-        int subtaskId = taskManager.addNewSubtask(subtask);
+-
+-        assertEquals(2, subtaskId); // ID подзадачи должен быть 2
+-        assertEquals(subtask, taskManager.getSubtask(subtaskId)); // Проверяем, что подзадача добавлена
+-        assertEquals(1, taskManager.getEpicSubtasks(epicId).size()); // Эпик должен содержать одну подзадачу
+-    }
+-
+-
+-
+-    @Test
+-    void deleteTask_ShouldRemoveTask() {
+-        Task task = new Task(0, "Task Title", "Task Description", Status.NEW);
+-        int taskId = taskManager.addNewTask(task);
+-        taskManager.deleteTask(taskId);
+-
+-        Exception exception = assertThrows(NoSuchElementException.class, () -> taskManager.getTask(taskId));
+-        assertEquals("Task with id " + taskId + " does not exist.", exception.getMessage());
+-    }
+-
+-    @Test
+-    void updateTask_ShouldUpdateTask() {
+-        Task task = new Task(0, "Task Title", "Task Description", Status.NEW);
+-        int taskId = taskManager.addNewTask(task);
+-
+-        task.setTitle("Updated Title");
+-        taskManager.updateTask(task);
+-
+-        Task updatedTask = taskManager.getTask(taskId);
+-        assertEquals("Updated Title", updatedTask.getTitle()); // Проверяем, что название обновлено
+-    }
+-
+-    @Test
+-    void updateEpic_ShouldUpdateEpic() {
+-        // Создаем эпик с 4 аргументами, включая статус
+-        Epic epic = new Epic(0, "Epic Title", "Epic Description", Status.NEW);
+-        int epicId = taskManager.addNewEpic(epic);
+-
+-        // Обновляем название эпика
+-        epic.setTitle("Updated Epic Title");
+-        taskManager.updateEpic(epic);
+-
+-        // Проверяем, что эпик обновился
+-        Epic updatedEpic = taskManager.getEpic(epicId);
+-        assertEquals("Updated Epic Title", updatedEpic.getTitle()); // Проверяем, что название обновлено
+-    }
+-
+-    @Test
+-    void updateSubtask_ShouldUpdateSubtask() {
+-        // Создаем эпик с 4 аргументами, включая статус
+-        Epic epic = new Epic(0, "Epic Title", "Epic Description", Status.NEW);
+-        int epicId = taskManager.addNewEpic(epic);
+-
+-        // Создаем подзадачу, связанную с эпиком
+-        Subtask subtask = new Subtask(0, "Subtask Title", "Subtask Description", Status.NEW, epicId);
+-        int subtaskId = taskManager.addNewSubtask(subtask);
+-
+-        // Обновляем название подзадачи
+-        subtask.setTitle("Updated Subtask Title");
+-        taskManager.updateSubtask(subtask);
+-
+-        // Проверяем, что подзадача обновилась
+-        Subtask updatedSubtask = taskManager.getSubtask(subtaskId);
+-        assertEquals("Updated Subtask Title", updatedSubtask.getTitle()); // Проверяем, что название обновлено
+-    }
+-
+-
+-    @Test
+-    void getTasks_ShouldReturnAllTasks() {
+-        Task task1 = new Task(0, "Task 1", "Description 1", Status.NEW);
+-        Task task2 = new Task(0, "Task 2", "Description 2", Status.NEW);
+-        taskManager.addNewTask(task1);
+-        taskManager.addNewTask(task2);
+-
+-        List<Task> tasks = taskManager.getTasks();
+-        assertEquals(2, tasks.size()); // Должны быть 2 задачи
+-    }
+-
+-    @Test
+-    void getEpics_ShouldReturnAllEpics() {
+-        // Создаем эпики с необходимыми параметрами, включая статус
+-        Epic epic1 = new Epic(0, "Epic 1", "Description 1", Status.NEW);
+-        Epic epic2 = new Epic(0, "Epic 2", "Description 2", Status.NEW);
+-        taskManager.addNewEpic(epic1);
+-        taskManager.addNewEpic(epic2);
+-
+-        // Получаем список эпиков
+-        List<Epic> epics = taskManager.getEpics();
+-        assertEquals(2, epics.size()); // Должны быть 2 эпика
+-    }
+-
+-
+-    @Test
+-    void getSubtasks_ShouldReturnAllSubtasks() {
+-        Epic epic = new Epic(0, "Epic Title", "Epic Description", Status.NEW);
+-        int epicId = taskManager.addNewEpic(epic);
+-
+-        // Создаем подзадачи, связанные с эпиком
+-        Subtask subtask1 = new Subtask(0, "Subtask 1", "Description 1", Status.NEW, epicId);
+-        Subtask subtask2 = new Subtask(0, "Subtask 2", "Description 2", Status.NEW, epicId);
+-
+-        // Добавляем подзадачи в менеджер задач
+-        taskManager.addNewSubtask(subtask1);
+-        taskManager.addNewSubtask(subtask2);
+-
+-        // Получаем список всех подзадач
+-        List<Subtask> subtasks = taskManager.getSubtasks();
+-
+-        // Проверяем, что в списке 2 подзадачи
+-        assertEquals(2, subtasks.size()); // Должны быть 2 подзадачи
+-    }
+-
+-
+-    @Test
+-    void deleteAllTasks_ShouldClearAllTasks() {
+-        Task task = new Task(0, "Task Title", "Task Description", Status.NEW);
+-        taskManager.addNewTask(task);
+-        taskManager.deleteAllTasks();
+-
+-        assertEquals(0, taskManager.getTasks().size()); // Должны быть 0 задач
+-    }
+-
+-    @Test
+-    void deleteAllEpics_ShouldClearAllEpics() {
+-        // Создаем эпик с необходимыми параметрами, включая статус
+-        Epic epic = new Epic(0, "Epic Title", "Epic Description", Status.NEW);
+-        taskManager.addNewEpic(epic);
+-        taskManager.deleteAllEpics();
+-
+-        assertEquals(0, taskManager.getEpics().size()); // Должны быть 0 эпиков
+-    }
+-
+-
+-    @Test
+-    void deleteAllSubtasks_ShouldClearAllSubtasks() {
+-        // Создаем эпик с необходимыми параметрами, включая статус
+-        Epic epic = new Epic(0, "Epic Title", "Epic Description", Status.NEW);
+-        int epicId = taskManager.addNewEpic(epic);
+-
+-        // Создаем подзадачу, связанную с эпиком
+-        Subtask subtask = new Subtask(0, "Subtask Title", "Subtask Description", Status.NEW, epicId);
+-        taskManager.addNewSubtask(subtask);
+-
+-        // Удаляем все подзадачи
+-        taskManager.deleteAllSubtasks();
+-
+-        // Проверяем, что подзадач больше нет
+-        assertEquals(0, taskManager.getSubtasks().size()); // Должны быть 0 подзадач
+-    }
+-
+-}
+Index: Treker/src/service/Managers.java
+===================================================================
+diff --git a/Treker/src/service/Managers.java b/Treker/src/service/Managers.java
+deleted file mode 100644
+--- a/Treker/src/service/Managers.java	
++++ /dev/null	
+@@ -1,17 +0,0 @@
+-package service;
+-
+-public class Managers {
+-    // Метод для получения экземпляра TaskManager
+-    public static TaskManager getDefault() {
+-
+-        HistoryManager historyManager = getDefaultHistory();
+-
+-        return new InMemoryTaskManager(historyManager);
+-    }
+-
+-    // Метод для получения экземпляра HistoryManager
+-    public static HistoryManager getDefaultHistory() {
+-        // Возвращаем новый экземпляр InMemoryHistoryManager
+-        return new InMemoryHistoryManager();
+-    }
+-}
+\ No newline at end of file
+Index: Treker/src/model/Status.java
+===================================================================
+diff --git a/Treker/src/model/Status.java b/Treker/src/model/Status.java
+deleted file mode 100644
+--- a/Treker/src/model/Status.java	
++++ /dev/null	
+@@ -1,12 +0,0 @@
+-package model;
+-public enum Status {
+-    NEW,
+-    IN_PROGRESS,
+-    DONE
+-}
+-
+-
+-
+-
+-
+-
+Index: Treker/src/Main.java
+===================================================================
+diff --git a/Treker/src/Main.java b/Treker/src/Main.java
+deleted file mode 100644
+--- a/Treker/src/Main.java	
++++ /dev/null	
+@@ -1,159 +0,0 @@
+-import model.*;
+-import service.Managers;
+-import service.TaskManager;
+-import service.HistoryManager;
+-import java.util.List;
+-import java.util.Scanner;
+-
+-
+-public class Main {
+-    public static void main(String[] args) {
+-        TaskManager taskManager = Managers.getDefault();
+-        HistoryManager historyManager = Managers.getDefaultHistory();
+-        Scanner scanner = new Scanner(System.in);
+-
+-        while (true) {
+-            System.out.println("Выберите действие:");
+-            System.out.println("1. Добавить задачу");
+-            System.out.println("2. Добавить подзадачу");
+-            System.out.println("3. Добавить эпик");
+-            System.out.println("4. Получить задачу по ID");
+-            System.out.println("5. Получить эпик по ID");
+-            System.out.println("6. Получить подзадачу по ID");
+-            System.out.println("7. Показать историю просмотренных задач");
+-            System.out.println("8. Удалить задачу по ID");
+-            System.out.println("9. Удалить подзадачу по ID");
+-            System.out.println("10. Удалить эпик по ID");
+-            System.out.println("0. Выход");
+-
+-            int choice = scanner.nextInt();
+-            scanner.nextLine(); // Очистка буфера
+-
+-            switch (choice) {
+-                case 1: // Добавление задачи
+-                    System.out.println("Введите ID задачи:");
+-                    int taskId = scanner.nextInt();
+-                    scanner.nextLine(); // Очистка буфера
+-                    System.out.println("Введите название задачи:");
+-                    String taskTitle = scanner.nextLine();
+-                    System.out.println("Введите описание задачи:");
+-                    String taskDescription = scanner.nextLine();
+-                    System.out.println("Введите статус задачи (NEW, IN_PROGRESS, DONE):");
+-                    Status taskStatus = Status.valueOf(scanner.nextLine().toUpperCase());
+-
+-                    Task task = new Task(taskId, taskTitle, taskDescription, taskStatus);
+-                    taskManager.addNewTask(task);
+-                    System.out.println("Задача добавлена.");
+-                    break;
+-
+-                case 2: // Добавление подзадачи
+-                    System.out.println("Введите ID подзадачи:");
+-                    int subtaskId = scanner.nextInt();
+-                    scanner.nextLine(); // Очистка буфера
+-                    System.out.println("Введите название подзадачи:");
+-                    String subtaskTitle = scanner.nextLine();
+-                    System.out.println("Введите описание подзадачи:");
+-                    String subtaskDescription = scanner.nextLine();
+-                    System.out.println("Введите статус подзадачи (NEW, IN_PROGRESS, DONE):");
+-                    Status subtaskStatus = Status.valueOf(scanner.nextLine().toUpperCase());
+-                    System.out.println("Введите ID эпика:");
+-                    int epicId = scanner.nextInt();
+-
+-                    Subtask subtask = new Subtask(subtaskId, subtaskTitle, subtaskDescription, subtaskStatus, epicId);
+-                    taskManager.addNewSubtask(subtask);
+-                    System.out.println("Подзадача добавлена.");
+-                    break;
+-
+-                case 3: // Добавление эпика
+-                    System.out.println("Введите ID эпика:");
+-                    int epicTaskId = scanner.nextInt();
+-                    scanner.nextLine(); // Очистка буфера
+-                    System.out.println("Введите название эпика:");
+-                    String epicTitle = scanner.nextLine();
+-                    System.out.println("Введите описание эпика:");
+-                    String epicDescription = scanner.nextLine();
+-                    System.out.println("Введите статус эпика (NEW, IN_PROGRESS, DONE):");
+-                    Status epicStatus = Status.valueOf(scanner.nextLine().toUpperCase());
+-
+-                    Epic epic = new Epic(epicTaskId, epicTitle, epicDescription, epicStatus);
+-                    taskManager.addNewEpic(epic);
+-                    System.out.println("Эпик добавлен.");
+-                    break;
+-
+-                case 4: // Получение задачи по ID
+-                    System.out.println("Введите ID задачи:");
+-                    int idToGet = scanner.nextInt();
+-                    Task retrievedTask = taskManager.getTask(idToGet);
+-                    if (retrievedTask != null) {
+-                        historyManager.add(retrievedTask); // Добавление в историю
+-                        System.out.println(retrievedTask);
+-                    } else {
+-                        System.out.println("Задача с таким ID не найдена.");
+-                    }
+-                    break;
+-
+-                case 5: // Получение эпика по ID
+-                    System.out.println("Введите ID эпика:");
+-                    int epicToGet = scanner.nextInt();
+-                    Epic retrievedEpic = taskManager.getEpic(epicToGet);
+-                    if (retrievedEpic != null) {
+-                        historyManager.add(retrievedEpic); // Добавление в историю
+-                        System.out.println(retrievedEpic);
+-                    } else {
+-                        System.out.println("Эпик с таким ID не найден.");
+-                    }
+-                    break;
+-
+-                case 6: // Получение подзадачи по ID
+-                    System.out.println("Введите ID подзадачи:");
+-                    int subtaskToGet = scanner.nextInt();
+-                    Subtask retrievedSubtask = taskManager.getSubtask(subtaskToGet);
+-                    if (retrievedSubtask != null) {
+-                        historyManager.add(retrievedSubtask); // Добавление в историю
+-                        System.out.println(retrievedSubtask);
+-                    } else {
+-                        System.out.println("Подзадача с таким ID не найдена.");
+-                    }
+-                    break;
+-
+-                case 7: // Показать историю просмотренных задач
+-                    List<Task> history = historyManager.getHistory();
+-                    System.out.println("История просмотренных задач:");
+-                    for (Task h : history) {
+-                        System.out.println(h);
+-                    }
+-                    break;
+-
+-                case 8: // Удалить задачу по ID
+-                    System.out.println("Введите ID задачи для удаления:");
+-                    int taskIdToDelete = scanner.nextInt();
+-                    taskManager.deleteTask(taskIdToDelete);
+-                    System.out.println("Задача с ID " + taskIdToDelete + " удалена.");
+-                    break;
+-
+-                case 9: // Удалить подзадачу по ID
+-                    System.out.println("Введите ID подзадачи для удаления:");
+-                    int subtaskIdToDelete = scanner.nextInt();
+-                    taskManager.deleteSubtask(subtaskIdToDelete);
+-                    System.out.println("Подзадача с ID " + subtaskIdToDelete + " удалена.");
+-                    break;
+-
+-                case 10: // Удалить эпик по ID
+-                    System.out.println("Введите ID эпика для удаления:");
+-                    int epicIdToDelete = scanner.nextInt();
+-                    taskManager.deleteEpic(epicIdToDelete);
+-                    System.out.println("Эпик с ID " + epicIdToDelete + " удален.");
+-                    break;
+-
+-                case 0: // Выход
+-                    System.out.println("Выход из программы.");
+-                    scanner.close();
+-                    return;
+-
+-                default:
+-                    System.out.println("Неверный выбор, попробуйте снова.");
+-                    break;
+-            }
+-        }
+-    }
+-}
+Index: Treker/src/service/HistoryManager.java
+===================================================================
+diff --git a/Treker/src/service/HistoryManager.java b/Treker/src/service/HistoryManager.java
+deleted file mode 100644
+--- a/Treker/src/service/HistoryManager.java	
++++ /dev/null	
+@@ -1,7 +0,0 @@
+-package service;
+-import model.Task;
+-import java.util.List;
+-public interface HistoryManager {
+-    void add(Task task);
+-    List<Task> getHistory();
+-}
+Index: Treker/test/service/ManagersTest.java
+===================================================================
+diff --git a/Treker/test/service/ManagersTest.java b/Treker/test/service/ManagersTest.java
+deleted file mode 100644
+--- a/Treker/test/service/ManagersTest.java	
++++ /dev/null	
+@@ -1,24 +0,0 @@
+-package service;
+-import org.junit.jupiter.api.Test;
+-import static org.junit.jupiter.api.Assertions.assertNotNull;
+-import static org.junit.jupiter.api.Assertions.assertTrue;
+-
+-
+-class ManagersTest {
+-
+-    @Test
+-    void testGetDefaultTaskManager() {
+-        // Тестируем, что метод getDefault возвращает экземпляр InMemoryTaskManager
+-        TaskManager taskManager = Managers.getDefault();
+-        assertNotNull(taskManager, "TaskManager должен быть не null");
+-        assertTrue(taskManager instanceof InMemoryTaskManager, "Должен возвращаться экземпляр InMemoryTaskManager");
+-    }
+-
+-    @Test
+-    void testGetDefaultHistoryManager() {
+-        // Тестируем, что метод getDefaultHistory возвращает экземпляр InMemoryHistoryManager
+-        HistoryManager historyManager = Managers.getDefaultHistory();
+-        assertNotNull(historyManager, "HistoryManager должен быть не null");
+-        assertTrue(historyManager instanceof InMemoryHistoryManager, "Должен возвращаться экземпляр InMemoryHistoryManager");
+-    }
+-}
+Index: Treker/src/model/Subtask.java
+===================================================================
+diff --git a/Treker/src/model/Subtask.java b/Treker/src/model/Subtask.java
+deleted file mode 100644
+--- a/Treker/src/model/Subtask.java	
++++ /dev/null	
+@@ -1,37 +0,0 @@
+-package model;
+-import java.util.Objects;
+-
+-public class Subtask extends Task {
+-
+-    private int epicId; // ID эпика, к которому относится подзадача
+-
+-    public Subtask(int id, String title, String description, Status status, int epicId) {
+-        super(id, title, description, status);
+-        this.epicId = epicId; // Установка ID эпика
+-    }
+-    public int getEpicId() {
+-        return epicId; // Получение ID эпика
+-    }
+-    @Override
+-    public boolean equals(Object o) {
+-        if (this == o) return true;
+-        if (!(o instanceof Subtask subtask)) return false;
+-        if (!super.equals(o)) return false;
+-        return epicId == subtask.epicId;
+-    }
+-    @Override
+-    public int hashCode() {
+-        return Objects.hash(super.hashCode(), epicId);
+-    }
+-    @Override
+-    public String toString() {
+-        return "Subtask{" +
+-                "id=" + id +
+-                ", title='" + title + '\'' +
+-                ", description='" + description + '\'' +
+-                ", status=" + status +
+-                ", epicId=" + epicId +
+-                '}';
+-    }
+-}
+-
+Index: Treker/.gitignore
+===================================================================
+diff --git a/Treker/.gitignore b/Treker/.gitignore
+deleted file mode 100644
+--- a/Treker/.gitignore	
++++ /dev/null	
+@@ -1,32 +0,0 @@
+-### IntelliJ IDEA ###
+-out/
+-Pi/
+-Dinner/
+-!**/src/main/**/out/
+-!**/src/test/**/out/
+-/Trecer.zip
+-
+-### Eclipse ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-bin/
+-!**/src/main/**/bin/
+-!**/src/test/**/bin/
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-
+-### VS Code ###
+-.vscode/
+-
+-### Mac OS ###
+-.DS_Store
+\ No newline at end of file
+Index: Treker/test/model/SubtaskTest.java
+===================================================================
+diff --git a/Treker/test/model/SubtaskTest.java b/Treker/test/model/SubtaskTest.java
+deleted file mode 100644
+--- a/Treker/test/model/SubtaskTest.java	
++++ /dev/null	
+@@ -1,42 +0,0 @@
+-package model;
+-import org.junit.jupiter.api.Test;
+-import static org.junit.jupiter.api.Assertions.assertEquals;
+-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+-
+-
+-class SubtaskTest {
+-    @Test
+-    void testSubtaskCreation() {
+-        Subtask subtask = new Subtask(1, "Subtask 1", "Description of subtask 1", Status.NEW, 100);
+-
+-        // Проверяем, что ID эпика установлен правильно
+-        assertEquals(100, subtask.getEpicId());
+-        // Проверяем, что другие параметры установлены правильно
+-        assertEquals(1, subtask.getId());
+-        assertEquals("Subtask 1", subtask.getTitle());
+-        assertEquals("Description of subtask 1", subtask.getDescription());
+-        assertEquals(Status.NEW, subtask.getStatus());
+-    }
+-
+-    @Test
+-    void testEqualsAndHashCode() {
+-        Subtask subtask1 = new Subtask(1, "Subtask 1", "Description of subtask 1", Status.NEW, 100);
+-        Subtask subtask2 = new Subtask(1, "Subtask 1", "Description of subtask 1", Status.NEW, 100);
+-        Subtask subtask3 = new Subtask(2, "Subtask 2", "Description of subtask 2", Status.DONE, 101);
+-
+-        // Проверяем, что два идентичных подзадачи равны
+-        assertEquals(subtask1, subtask2);
+-        assertEquals(subtask1.hashCode(), subtask2.hashCode());
+-
+-        // Проверяем, что разные подзадачи не равны
+-        assertNotEquals(subtask1, subtask3);
+-    }
+-
+-    @Test
+-    void testToString() {
+-        Subtask subtask = new Subtask(1, "Subtask 1", "Description of subtask 1", Status.NEW, 100);
+-
+-        String expectedString = "Subtask{id=1, title='Subtask 1', description='Description of subtask 1', status=NEW, epicId=100}";
+-        assertEquals(expectedString, subtask.toString());
+-    }
+-}
+Index: Treker/.idea/misc.xml
+===================================================================
+diff --git a/Treker/.idea/misc.xml b/Treker/.idea/misc.xml
+deleted file mode 100644
+--- a/Treker/.idea/misc.xml	
++++ /dev/null	
+@@ -1,5 +0,0 @@
+-<project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: Treker/src/model/Task.java
+===================================================================
+diff --git a/Treker/src/model/Task.java b/Treker/src/model/Task.java
+deleted file mode 100644
+--- a/Treker/src/model/Task.java	
++++ /dev/null	
+@@ -1,66 +0,0 @@
+-package model;
+-
+-
+-public class Task {
+-
+-    protected int id; // Уникальный ID задачи
+-    protected String title; // Название задач
+-    protected String description; // Описание задачи
+-    protected Status status; // Статус задачи
+-
+-    public Task(int id, String title, String description, Status status) {
+-        this.id = id;
+-        this.title = title;
+-        this.description = description;
+-        this.status = status;
+-    }
+-    // Геттеры и сеттеры
+-    public Integer getId() {
+-        return id;
+-    }
+-    public void setTitle(String title) {
+-        this.title = title;
+-    }
+-
+-    public void setDescription(String description) {
+-        this.description = description;
+-    }
+-
+-    public void setId(int id) {
+-        this.id = id;
+-    }
+-    public String getTitle() {
+-        return title;
+-    }
+-    public String getDescription() {
+-        return description;
+-    }
+-    public Status getStatus() {
+-        return status;
+-    }
+-    public void setStatus(Status status) {
+-        this.status = status;
+-    }
+-    @Override
+-
+-    public boolean equals(Object o) {
+-        if (this == o) return true; // Сравнение ссылок
+-        if (!(o instanceof Task)) return false; // Проверка на тип
+-        Task task = (Task) o; // Приведение типа
+-        return id == task.id; // Сравнение по id
+-    }
+-    @Override
+-    public int hashCode() {
+-        return Integer.hashCode(id); // Теперь хеш-код зависит только от id
+-    }
+-    @Override
+-    public String toString() {
+-        return "Task{" +
+-                "id=" + id +
+-                ", title='" + title + '\'' +
+-                ", description='" + description + '\'' +
+-                ", status=" + status +
+-                '}';
+-    }
+-}
+-
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+deleted file mode 100644
+--- a/.idea/compiler.xml	
++++ /dev/null	
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="JavacSettings">
+-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+-      <module name="Treker" options="--add-exports jdk.javadoc/jdk.javadoc.internal.doclets.formats.html.markup=ALL-UNNAMED" />
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: Treker/src/service/TaskManager.java
+===================================================================
+diff --git a/Treker/src/service/TaskManager.java b/Treker/src/service/TaskManager.java
+deleted file mode 100644
+--- a/Treker/src/service/TaskManager.java	
++++ /dev/null	
+@@ -1,32 +0,0 @@
+-package service;
+-import model.Epic;
+-import model.Subtask;
+-import model.Task;
+-import java.util.List;
+-
+-
+-public interface TaskManager {
+-    List<Task> getTasks();
+-    List<Epic> getEpics();
+-    List<Subtask> getSubtasks();
+-    List<Subtask> getEpicSubtasks(int epicId);
+-    Task getTask(int id);
+-    Subtask getSubtask(int id);
+-    Epic getEpic(int id);
+-    int addNewTask(Task task);
+-    int addNewEpic(Epic epic);
+-    Integer addNewSubtask(Subtask subtask);
+-    void deleteEpic(int id);
+-    void updateTask(Task task);
+-    void updateEpic(Epic epic);
+-    void updateSubtask(Subtask subtask);
+-    void deleteTask(int id);
+-    void deleteSubtask(int id);
+-    List<Task> getHistory();
+-    void deleteAllTasks();
+-    void deleteAllEpics();
+-    void deleteAllSubtasks();
+-
+-
+-
+-}
+Index: Treker/src/service/InMemoryTaskManager.java
+===================================================================
+diff --git a/Treker/src/service/InMemoryTaskManager.java b/Treker/src/service/InMemoryTaskManager.java
+deleted file mode 100644
+--- a/Treker/src/service/InMemoryTaskManager.java	
++++ /dev/null	
+@@ -1,268 +0,0 @@
+-package service;
+-import model.Epic;
+-import model.Status;
+-import model.Subtask;
+-import model.Task;
+-import java.util.*;
+-
+-public class InMemoryTaskManager implements TaskManager {
+-    private final Map<Integer, Task> tasks = new HashMap<>(); // Задачи
+-    private final Map<Integer, Epic> epics = new HashMap<>(); // Эпики
+-    private final Map<Integer, Subtask> subtasks = new HashMap<>(); // Подзадачи
+-
+-    private int nextId = 1; // Счетчик для ID
+-    protected HistoryManager historyManager; // Менеджер истории
+-    public InMemoryTaskManager(HistoryManager historyManager) {
+-        this.historyManager = historyManager;
+-            }
+-    public int getNextId() {
+-        return nextId;
+-    }
+-    @Override
+-    public int addNewTask(Task task) {
+-        int id = nextId++; // Получаем следующий уникальный ID
+-        task.setId(id); // Устанавливаем уникальный ID для задачи
+-        tasks.put(id, task); // Сохраняем задачу в коллекции
+-        return id; // Возвращаем ID добавленной задачи
+-    }
+-    @Override
+-    public int addNewEpic(Epic epic) {
+-        int id = nextId++; // Получаем следующий уникальный ID
+-        epic.setId(id); // Устанавливаем уникальный ID для эпика
+-        epics.put(id, epic); // Сохраняем эпик в коллекции
+-        return id; // Возвращаем ID добавленного эпика
+-    }
+-    @Override
+-    public Integer addNewSubtask(Subtask subtask) {
+-        Epic epic = epics.get(subtask.getEpicId());// Проверяем, что epicId задан верно и такой эпик есть
+-        if (epic == null) {
+-            throw new NoSuchElementException("Epic with ID " + subtask.getEpicId() + " not found.");
+-        }
+-        int id = nextId++;// Устанавливаем id и добавляем подзадачу в хранилище только после проверки epicId
+-        subtask.setId(id);
+-        subtasks.put(id, subtask);
+-        epic.addSubtask(subtask);// Добавляем ID подзадачи в эпик
+-        updateEpicStatus(epic.getId());// Обновляем статус эпика, так как была добавлена новая подзадача
+-        return id;// Возвращаем ID добавленной подзадачи
+-    }
+-    @Override
+-    public List<Task> getTasks() {
+-        // Проверяем, что карта задач не null
+-        if (tasks == null) {
+-            System.out.println("Задач нет");
+-        }
+-        // Возвращаем список всех задач
+-        return new ArrayList<>(tasks.values());
+-    }
+-    @Override
+-    public List<Epic> getEpics() {
+-        if (epics == null) {
+-            System.out.println("Эпиков нет.");
+-        }
+-        return new ArrayList<>(epics.values());
+-    }
+-    @Override
+-    public List<Subtask> getSubtasks() {
+-        // Проверяем, что карта подзадач не null
+-        if (subtasks == null) {
+-            System.out.println("Подзадач нет.");
+-        }
+-        // Возвращаем список всех подзадач
+-        return new ArrayList<>(subtasks.values());
+-    }
+-    @Override
+-    public List<Subtask> getEpicSubtasks(int epicId) {
+-        // Находим эпик по его ID
+-        Epic epic = epics.get(epicId);
+-
+-        // Проверяем, существует ли эпик
+-        if (epic == null) {
+-            throw new NoSuchElementException("Epic with id " + epicId + " does not exist.");
+-        }
+-        // Получаем список подзадач этого эпика
+-        List<Subtask> epicSubtasks = new ArrayList<>();
+-        // Проходим по всем подзадачам, связанным с эпиком
+-        for (Subtask subtask : subtasks.values()) {
+-            if (subtask.getEpicId() == epicId) {
+-                epicSubtasks.add(subtask);
+-            }
+-        }
+-        return epicSubtasks;// Возвращаем список подзадач, если они найдены
+-    }
+-    @Override
+-    public Task getTask(int id) {
+-        Task task = tasks.get(id); // Получаем задачу по ID
+-        if (task == null) {
+-            // Если задача не найдена, выбрасываем исключение
+-            throw new NoSuchElementException("Task with id " + id + " does not exist.");
+-        }
+-        historyManager.add(task); // Добавляем задачу в историю
+-        return task; // Возвращаем найденную задачу
+-    }
+-    @Override
+-    public Epic getEpic(int id) {
+-        // Проверяем, существует ли эпик с заданным ID
+-        Epic epic = epics.get(id); // Получаем эпик по ID
+-        if (epic == null) {
+-            // Если эпика нет, выбрасываем исключение
+-            throw new NoSuchElementException("Epic with id " + id + " does not exist.");
+-        }
+-        historyManager.add(epic); // Добавляем эпик в историю
+-        return epic; // Возвращаем найденный эпик
+-    }
+-    @Override
+-    public Subtask getSubtask(int id) {
+-        Subtask subtask = subtasks.get(id); // Получаем подзадачу по ID
+-        if (subtask == null) {
+-            throw new NoSuchElementException("Subtask with id " + id + " does not exist.");
+-        }
+-        historyManager.add(subtask); // Добавляем объект подзадачи в историю
+-        return subtask; // Возвращаем найденную подзадачу
+-    }
+-    @Override
+-    public void updateTask(Task task) {
+-        // Проверяем, существует ли задача с заданным ID
+-        if (task == null || !tasks.containsKey(task.getId())) {
+-            throw new NoSuchElementException("Task with id " + task.getId() + " does not exist.");
+-        }
+-        tasks.put(task.getId(), task);// Обновляем задачу целиком
+-    }
+-
+-    @Override
+-    public void updateEpic(Epic epic) {
+-        // Проверяем, существует ли эпик с заданным ID
+-        if (epic == null || !epics.containsKey(epic.getId())) {
+-            throw new NoSuchElementException("Epic with id " + epic.getId() + " does not exist.");
+-        }
+-        Epic existingEpic = epics.get(epic.getId());
+-        // Обновляем параметры эпика, кроме статуса
+-        existingEpic.setTitle(epic.getTitle());  // Обновляем название
+-        existingEpic.setDescription(epic.getDescription());  // Обновляем описание
+-        updateEpicStatus(existingEpic.getId());// Обновляем статус эпика, основываясь на статусах подзадач
+-    }
+-    @Override
+-    public void updateSubtask(Subtask subtask) {
+-        if (subtask == null || !subtasks.containsKey(subtask.getId())) {// Проверяем, существует ли подзадача с заданным ID
+-            throw new NoSuchElementException("Subtask with id " + subtask.getId() + " does not exist.");
+-        }
+-        Subtask existingSubtask = subtasks.get(subtask.getId());
+-        existingSubtask.setTitle(subtask.getTitle()); // Обновляем название
+-        existingSubtask.setDescription(subtask.getDescription()); // Обновляем описание
+-        existingSubtask.setStatus(subtask.getStatus()); // Обновляем статус
+-        int epicId = existingSubtask.getEpicId(); // Получаем ID эпика из подзадачи
+-        updateEpicStatus(epicId); // Пересчитываем статус эпика
+-    }
+-    @Override
+-    public void deleteTask(int id) {
+-        // Проверяем, существует ли задача с данным ID
+-        if (!tasks.containsKey(id)) {
+-            throw new NoSuchElementException("Task with id " + id + " does not exist.");
+-        }
+-        // Удаляем задачу по ID
+-        tasks.remove(id);
+-    }
+-    @Override
+-    public void deleteSubtask(int id) {
+-        if (!subtasks.containsKey(id)) {
+-            throw new NoSuchElementException("Subtask with id " + id + " does not exist.");
+-        }
+-        Subtask subtask = subtasks.get(id); // Получаем подзадачу
+-        int epicId = subtask.getEpicId(); // Получаем ID эпика, связанного с подзадачей
+-        Epic epic = epics.get(epicId);
+-        if (epic != null) {// Проверяем, существует ли эпик
+-            epic.removeSubtask(id); // Удаляем подзадачу из эпика
+-            updateEpicStatus(epicId); // Обновляем статус эпика после удаления подзадачи
+-        }
+-        subtasks.remove(id);// Удаляем подзадачу из глобального списка подзадач
+-    }
+-    @Override
+-    public void deleteEpic(int id) {
+-        // Получаем эпик по ID
+-        Epic epic = epics.get(id);
+-        if (epic == null) {// Проверяем, существует ли эпик
+-            throw new NoSuchElementException("Epic with id " + id + " does not exist.");
+-        }
+-        List<Subtask> subtasksToRemove = epic.getSubtasks();
+-        for (Subtask subtask : subtasksToRemove) {// Удаляем все подзадачи, связанные с эпиком
+-            subtasks.remove(subtask.getId());
+-        }
+-        epics.remove(id);// Удаляем сам эпик
+-    }
+-    @Override
+-    public void deleteAllTasks() {
+-        if (tasks.isEmpty()) {// Проверяем, есть ли задачи
+-            System.out.println("Нет задач для удаления.");
+-            return;
+-        }
+-        tasks.clear(); // Очищаем коллекцию задач
+-        System.out.println("Все задачи удалены.");
+-    }
+-    @Override
+-    public void deleteAllEpics() {
+-        if (epics.isEmpty()) {// Проверяем, есть ли вообще эпики в коллекции
+-            System.out.println("Нет эпиков для удаления.");
+-            return;
+-        }
+-        for (Epic epic : epics.values()) {
+-            List<Subtask> subtaskList = epic.getSubtasks();// Получаем список подзадач эпика
+-            if (!subtaskList.isEmpty()) {// Проверяем, есть ли у эпика подзадачи
+-                for (Subtask subtask : subtaskList) {// Удаляем каждую подзадачу, связанную с эпиком
+-                    subtasks.remove(subtask.getId()); // Удаляем подзадачу по её ID
+-                }
+-            }
+-        }
+-        epics.clear(); // Удаляем все эпики из коллекции
+-        System.out.println("Все эпики и связанные с ними подзадачи удалены.");
+-    }
+-    @Override
+-    public void deleteAllSubtasks() {
+-        if (subtasks.isEmpty()) {
+-            System.out.println("Нет подзадач для удаления."); // Сообщаем, если подзадач нет
+-            return;
+-        }
+-        subtasks.clear(); // Очищаем коллекцию подзадач
+-        System.out.println("Все подзадачи удалены."); // Подтверждаем успешное удаление
+-    }
+-    @Override
+-    public List<Task> getHistory() {
+-        return historyManager.getHistory(); // Возвращаем историю задач из менеджера истории
+-    }
+-
+-    private void updateEpicStatus(int epicId) {
+-        Epic epic = epics.get(epicId); // Получаем эпик по ID
+-        if (epic == null) {
+-            return; // Если эпик не найден, выходим
+-        }
+-        List<Subtask> subtasks = epic.getSubtasks(); // Получаем список подзадач
+-        if (subtasks.isEmpty()) {
+-            epic.setStatus(Status.NEW); // Если подзадач нет, устанавливаем статус NEW
+-            return;
+-        }
+-        int newCount = 0;
+-        int inProgressCount = 0;
+-        int doneCount = 0;
+-        // Перебираем все подзадачи и считаем их статусы
+-        for (Subtask subtask : subtasks) {
+-            switch (subtask.getStatus()) {
+-                case NEW:
+-                    newCount++;
+-                    break;
+-                case IN_PROGRESS:
+-                    inProgressCount++;
+-                    break;
+-                case DONE:
+-                    doneCount++;
+-                    break;
+-            }
+-        }
+-
+-        // Обновляем статус эпика на основе подсчитанных значений
+-        if (doneCount == subtasks.size()) {
+-            epic.setStatus(Status.DONE); // Все подзадачи выполнены
+-        } else if (inProgressCount > 0) {
+-            epic.setStatus(Status.IN_PROGRESS); // Есть хотя бы одна подзадача в процессе
+-        } else {
+-            epic.setStatus(Status.NEW); // Все подзадачи новые
+-        }
+-    }
+-}
+\ No newline at end of file
+Index: Treker/test/model/TaskTest.java
+===================================================================
+diff --git a/Treker/test/model/TaskTest.java b/Treker/test/model/TaskTest.java
+deleted file mode 100644
+--- a/Treker/test/model/TaskTest.java	
++++ /dev/null	
+@@ -1,57 +0,0 @@
+-package model;
+-import org.junit.jupiter.api.BeforeEach;
+-import org.junit.jupiter.api.Test;
+-import static org.junit.jupiter.api.Assertions.*;
+-
+-
+-class TaskTest {
+-    private Task task;
+-
+-    @BeforeEach
+-    void setUp() {
+-        // Инициализация тестового объекта перед каждым тестом
+-        task = new Task(1, "Test Task", "This is a test description", Status.NEW);
+-    }
+-
+-    @Test
+-    void testConstructorAndGetters() {
+-        assertEquals(1, task.getId());
+-        assertEquals("Test Task", task.getTitle());
+-        assertEquals("This is a test description", task.getDescription());
+-        assertEquals(Status.NEW, task.getStatus());
+-    }
+-
+-    @Test
+-    void testSetters() {
+-        task.setTitle("Updated Task");
+-        task.setDescription("Updated description");
+-        task.setStatus(Status.IN_PROGRESS);
+-
+-        assertEquals("Updated Task", task.getTitle());
+-        assertEquals("Updated description", task.getDescription());
+-        assertEquals(Status.IN_PROGRESS, task.getStatus());
+-    }
+-
+-    @Test
+-    void testEquals() {
+-        Task task2 = new Task(1, "Another Task", "Different description", Status.NEW);
+-        Task task3 = new Task(2, "Another Task", "Different description", Status.NEW);
+-
+-        assertEquals(task, task2); // Ожидаем, что объекты с одинаковым id равны
+-        assertNotEquals(task, task3); // Ожидаем, что объекты с разными id не равны
+-    }
+-
+-    @Test
+-    void testHashCode() {
+-        // Теперь ожидаем, что hashCode будет равен, если id равны
+-        Task task2 = new Task(1, "Another Task", "Different description", Status.NEW);
+-        assertEquals(task.hashCode(), task2.hashCode()); // Ожидаем одинаковые хеш-коды для равных объектов
+-    }
+-
+-    @Test
+-    void testToString() {
+-        String expectedString = "Task{id=1, title='Test Task', description='This is a test description', status=NEW}";
+-        assertEquals(expectedString, task.toString()); // Проверяем правильность вывода метода toString
+-    }
+-}
+-
+Index: Treker/Treker.iml
+===================================================================
+diff --git a/Treker/Treker.iml b/Treker/Treker.iml
+deleted file mode 100644
+--- a/Treker/Treker.iml	
++++ /dev/null	
+@@ -1,28 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+-      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-    <orderEntry type="module-library">
+-      <library name="JUnit5.8.1">
+-        <CLASSES>
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar!/" />
+-        </CLASSES>
+-        <JAVADOC />
+-        <SOURCES />
+-      </library>
+-    </orderEntry>
+-  </component>
+-</module>
+\ No newline at end of file
+Index: Treker/src/model/Epic.java
+===================================================================
+diff --git a/Treker/src/model/Epic.java b/Treker/src/model/Epic.java
+deleted file mode 100644
+--- a/Treker/src/model/Epic.java	
++++ /dev/null	
+@@ -1,52 +0,0 @@
+-package model;
+-import java.util.ArrayList;
+-import java.util.List;
+-import java.util.Objects;
+-
+-public class Epic extends Task {
+-    private final List<Subtask> subtasks; // Список подзадач
+-    public Epic(int id, String title, String description,Status status) {
+-        super(id, title, description, status);
+-        this.subtasks = new ArrayList<>(); // Инициализация списка подзадач
+-    }
+-    public void addSubtask(Subtask subtask) {
+-        subtasks.add(subtask); // Добавление подзадачи в список
+-    }
+-    public List<Subtask> getSubtasks() {
+-        return subtasks;
+-    }
+-    public void removeSubtask(int id) {
+-        Subtask subtaskToRemove = null;
+-        for (Subtask subtask : subtasks) {
+-            if (subtask.getId() == id) {
+-                subtaskToRemove = subtask;
+-                break;
+-            }
+-        }
+-        if (subtaskToRemove != null) {
+-            subtasks.remove(subtaskToRemove); // Удаляем подзадачу из списка
+-        }
+-    }
+-    @Override
+-    public boolean equals(Object o) {
+-        if (this == o) return true;
+-        if (!(o instanceof Epic epic)) return false;
+-        if (!super.equals(o)) return false;
+-        return Objects.equals(subtasks, epic.subtasks);
+-    }
+-    @Override
+-    public int hashCode() {
+-        return Objects.hash(super.hashCode(), subtasks);
+-    }
+-    @Override
+-    public String toString() {
+-        return "Epic{" +
+-                "id=" + id +
+-                ", title='" + title + '\'' +
+-                ", description='" + description + '\'' +
+-                ", status=" + status +
+-                ", subtasks=" + subtasks +
+-                '}';
+-    }
+-}
+-
+Index: Treker/.idea/modules.xml
+===================================================================
+diff --git a/Treker/.idea/modules.xml b/Treker/.idea/modules.xml
+deleted file mode 100644
+--- a/Treker/.idea/modules.xml	
++++ /dev/null	
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/Treker.iml" filepath="$PROJECT_DIR$/Treker.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	
++++ /dev/null	
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: Treker/.idea/.gitignore
+===================================================================
+diff --git a/Treker/.idea/.gitignore b/Treker/.idea/.gitignore
+deleted file mode 100644
+--- a/Treker/.idea/.gitignore	
++++ /dev/null	
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: Treker/.idea/vcs.xml
+===================================================================
+diff --git a/Treker/.idea/vcs.xml b/Treker/.idea/vcs.xml
+deleted file mode 100644
+--- a/Treker/.idea/vcs.xml	
++++ /dev/null	
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: Treker/.idea/compiler.xml
+===================================================================
+diff --git a/Treker/.idea/compiler.xml b/Treker/.idea/compiler.xml
+deleted file mode 100644
+--- a/Treker/.idea/compiler.xml	
++++ /dev/null	
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="JavacSettings">
+-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+-      <module name="Treker" options="--add-exports jdk.javadoc/jdk.javadoc.internal.doclets.formats.html.markup=ALL-UNNAMED" />
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	
++++ /dev/null	
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: Treker/test/model/EpicTest.java
+===================================================================
+diff --git a/Treker/test/model/EpicTest.java b/Treker/test/model/EpicTest.java
+deleted file mode 100644
+--- a/Treker/test/model/EpicTest.java	
++++ /dev/null	
+@@ -1,72 +0,0 @@
+-package model;
+-import org.junit.jupiter.api.BeforeEach;
+-import org.junit.jupiter.api.Test;
+-import java.util.List;
+-import static org.junit.jupiter.api.Assertions.assertEquals;
+-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+-
+-
+-class EpicTest {
+-
+-    private Epic epic;
+-
+-    @BeforeEach
+-    void setUp() {
+-        // Инициализируем объект Epic перед каждым тестом
+-        epic = new Epic(1, "Epic Title", "Epic Description", Status.NEW);
+-    }
+-
+-    @Test
+-    void testAddSubtask() {
+-        Subtask subtask = new Subtask(2, "Subtask Title", "Subtask Description", Status.NEW, 1);
+-        epic.addSubtask(subtask);
+-
+-        List<Subtask> subtasks = epic.getSubtasks();
+-        assertEquals(1, subtasks.size(), "Subtask list should contain 1 subtask after addition.");
+-        assertEquals(subtask, subtasks.get(0), "The added subtask should be the same as the one retrieved.");
+-    }
+-
+-    @Test
+-    void testRemoveSubtask() {
+-        Subtask subtask1 = new Subtask(2, "Subtask 1", "Description 1", Status.NEW, 1);
+-        Subtask subtask2 = new Subtask(3, "Subtask 2", "Description 2", Status.NEW, 1);
+-        epic.addSubtask(subtask1);
+-        epic.addSubtask(subtask2);
+-
+-        epic.removeSubtask(2); // Удаляем подзадачу с ID 2
+-
+-        List<Subtask> subtasks = epic.getSubtasks();
+-        assertEquals(1, subtasks.size(), "Subtask list should contain 1 subtask after removal.");
+-        assertEquals(subtask2, subtasks.get(0), "The remaining subtask should be the one with ID 3.");
+-    }
+-
+-    @Test
+-    void testRemoveNonExistentSubtask() {
+-        Subtask subtask = new Subtask(2, "Subtask Title", "Subtask Description", Status.NEW, 1);
+-        epic.addSubtask(subtask);
+-
+-        epic.removeSubtask(3); // Пытаемся удалить несуществующую подзадачу с ID 3
+-
+-        List<Subtask> subtasks = epic.getSubtasks();
+-        assertEquals(1, subtasks.size(), "Subtask list should remain unchanged when trying to remove non-existent subtask.");
+-    }
+-
+-    @Test
+-    void testEqualsAndHashCode() {
+-        Epic epic2 = new Epic(1, "Epic Title", "Epic Description", Status.NEW);
+-        epic2.addSubtask(new Subtask(2, "Subtask Title", "Subtask Description", Status.NEW, 1));
+-
+-        assertNotEquals(epic, epic2, "Epics should not be equal as epic2 has no subtasks.");
+-
+-        epic.addSubtask(new Subtask(2, "Subtask Title", "Subtask Description", Status.NEW, 1));
+-
+-        assertEquals(epic, epic2, "Epics should be equal as they have the same properties.");
+-        assertEquals(epic.hashCode(), epic2.hashCode(), "Epics should have the same hash code when they are equal.");
+-    }
+-
+-    @Test
+-    void testToString() {
+-        String expected = "Epic{id=1, title='Epic Title', description='Epic Description', status=NEW, subtasks=[]}";
+-        assertEquals(expected, epic.toString(), "toString() should return the correct string representation.");
+-    }
+-}
+Index: Treker.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/test\" isTestSource=\"true\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"module-library\">\r\n      <library name=\"JUnit5.8.1\">\r\n        <CLASSES>\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.8.1/junit-jupiter-params-5.8.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar!/\" />\r\n        </CLASSES>\r\n        <JAVADOC />\r\n        <SOURCES />\r\n      </library>\r\n    </orderEntry>\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Treker.iml b/Treker.iml
+--- a/Treker.iml	
++++ b/Treker.iml	
+@@ -8,7 +8,17 @@
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
+-    <orderEntry type="module-library">
++    <orderEntry type="module-library" scope="TEST">
++      <library name="JUnit4">
++        <CLASSES>
++          <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar!/" />
++          <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/" />
++        </CLASSES>
++        <JAVADOC />
++        <SOURCES />
++      </library>
++    </orderEntry>
++    <orderEntry type="module-library" scope="TEST">
+       <library name="JUnit5.8.1">
+         <CLASSES>
+           <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.8.1/junit-jupiter-5.8.1.jar!/" />

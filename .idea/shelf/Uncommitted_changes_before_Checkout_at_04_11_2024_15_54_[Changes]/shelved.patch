@@ -1,0 +1,64 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><<<<<<< HEAD\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_21\" default=\"true\" project-jdk-name=\"21\" project-jdk-type=\"JavaSDK\">\r\n=======\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"corretto-21\" project-jdk-type=\"JavaSDK\">\r\n>>>>>>> a862220e0a0dca7115d8b421b1051630564d5d39\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,11 +1,6 @@
+-<<<<<<< HEAD
+-<project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+-=======
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="corretto-21" project-jdk-type="JavaSDK">
+->>>>>>> a862220e0a0dca7115d8b421b1051630564d5d39
++  <component name="ProjectRootManager" version="2" project-jdk-name="21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectModuleManager\">\r\n    <modules>\r\n<<<<<<< HEAD\r\n      <module fileurl=\"file://$PROJECT_DIR$/Treker.iml\" filepath=\"$PROJECT_DIR$/Treker.iml\" />\r\n=======\r\n      <module fileurl=\"file://$PROJECT_DIR$/m1-t12-hotkeys.iml\" filepath=\"$PROJECT_DIR$/m1-t12-hotkeys.iml\" />\r\n>>>>>>> a862220e0a0dca7115d8b421b1051630564d5d39\r\n    </modules>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	
++++ b/.idea/modules.xml	
+@@ -2,11 +2,7 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
+-<<<<<<< HEAD
+       <module fileurl="file://$PROJECT_DIR$/Treker.iml" filepath="$PROJECT_DIR$/Treker.iml" />
+-=======
+-      <module fileurl="file://$PROJECT_DIR$/m1-t12-hotkeys.iml" filepath="$PROJECT_DIR$/m1-t12-hotkeys.iml" />
+->>>>>>> a862220e0a0dca7115d8b421b1051630564d5d39
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import model.*;\r\nimport service.Managers;\r\nimport service.TaskManager;\r\nimport service.HistoryManager;\r\nimport java.util.List;\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        TaskManager taskManager = Managers.getDefault();\r\n        HistoryManager historyManager = Managers.getDefaultHistory();\r\n        Scanner scanner = new Scanner(System.in);\r\n\r\n        while (true) {\r\n            System.out.println(\"Выберите действие:\");\r\n            System.out.println(\"1. Добавить задачу\");\r\n            System.out.println(\"2. Добавить подзадачу\");\r\n            System.out.println(\"3. Добавить эпик\");\r\n            System.out.println(\"4. Получить задачу по ID\");\r\n            System.out.println(\"5. Получить эпик по ID\");\r\n            System.out.println(\"6. Получить подзадачу по ID\");\r\n            System.out.println(\"7. Показать историю просмотренных задач\");\r\n            System.out.println(\"8. Удалить задачу по ID\");\r\n            System.out.println(\"9. Удалить подзадачу по ID\");\r\n            System.out.println(\"10. Удалить эпик по ID\");\r\n            System.out.println(\"0. Выход\");\r\n\r\n            int choice = scanner.nextInt();\r\n            scanner.nextLine(); // Очистка буфера\r\n\r\n            switch (choice) {\r\n                case 1: // Добавление задачи\r\n                    System.out.println(\"Введите ID задачи:\");\r\n                    int taskId = scanner.nextInt();\r\n                    scanner.nextLine(); // Очистка буфера\r\n                    System.out.println(\"Введите название задачи:\");\r\n                    String taskTitle = scanner.nextLine();\r\n                    System.out.println(\"Введите описание задачи:\");\r\n                    String taskDescription = scanner.nextLine();\r\n                    System.out.println(\"Введите статус задачи (NEW, IN_PROGRESS, DONE):\");\r\n                    Status taskStatus = Status.valueOf(scanner.nextLine().toUpperCase());\r\n\r\n                    Task task = new Task(taskId, taskTitle, taskDescription, taskStatus);\r\n                    taskManager.addNewTask(task);\r\n                    System.out.println(\"Задача добавлена.\");\r\n                    break;\r\n\r\n                case 2: // Добавление подзадачи\r\n                    System.out.println(\"Введите ID подзадачи:\");\r\n                    int subtaskId = scanner.nextInt();\r\n                    scanner.nextLine(); // Очистка буфера\r\n                    System.out.println(\"Введите название подзадачи:\");\r\n                    String subtaskTitle = scanner.nextLine();\r\n                    System.out.println(\"Введите описание подзадачи:\");\r\n                    String subtaskDescription = scanner.nextLine();\r\n                    System.out.println(\"Введите статус подзадачи (NEW, IN_PROGRESS, DONE):\");\r\n                    Status subtaskStatus = Status.valueOf(scanner.nextLine().toUpperCase());\r\n                    System.out.println(\"Введите ID эпика:\");\r\n                    int epicId = scanner.nextInt();\r\n\r\n                    Subtask subtask = new Subtask(subtaskId, subtaskTitle, subtaskDescription, subtaskStatus, epicId);\r\n                    taskManager.addNewSubtask(subtask);\r\n                    System.out.println(\"Подзадача добавлена.\");\r\n                    break;\r\n\r\n                case 3: // Добавление эпика\r\n                    System.out.println(\"Введите ID эпика:\");\r\n                    int epicTaskId = scanner.nextInt();\r\n                    scanner.nextLine(); // Очистка буфера\r\n                    System.out.println(\"Введите название эпика:\");\r\n                    String epicTitle = scanner.nextLine();\r\n                    System.out.println(\"Введите описание эпика:\");\r\n                    String epicDescription = scanner.nextLine();\r\n                    System.out.println(\"Введите статус эпика (NEW, IN_PROGRESS, DONE):\");\r\n                    Status epicStatus = Status.valueOf(scanner.nextLine().toUpperCase());\r\n\r\n                    Epic epic = new Epic(epicTaskId, epicTitle, epicDescription, epicStatus);\r\n                    taskManager.addNewEpic(epic);\r\n                    System.out.println(\"Эпик добавлен.\");\r\n                    break;\r\n\r\n                case 4: // Получение задачи по ID\r\n                    System.out.println(\"Введите ID задачи:\");\r\n                    int idToGet = scanner.nextInt();\r\n                    Task retrievedTask = taskManager.getTask(idToGet);\r\n                    if (retrievedTask != null) {\r\n                        historyManager.add(retrievedTask); // Добавление в историю\r\n                        System.out.println(retrievedTask);\r\n                    } else {\r\n                        System.out.println(\"Задача с таким ID не найдена.\");\r\n                    }\r\n                    break;\r\n\r\n                case 5: // Получение эпика по ID\r\n                    System.out.println(\"Введите ID эпика:\");\r\n                    int epicToGet = scanner.nextInt();\r\n                    Epic retrievedEpic = taskManager.getEpic(epicToGet);\r\n                    if (retrievedEpic != null) {\r\n                        historyManager.add(retrievedEpic); // Добавление в историю\r\n                        System.out.println(retrievedEpic);\r\n                    } else {\r\n                        System.out.println(\"Эпик с таким ID не найден.\");\r\n                    }\r\n                    break;\r\n\r\n                case 6: // Получение подзадачи по ID\r\n                    System.out.println(\"Введите ID подзадачи:\");\r\n                    int subtaskToGet = scanner.nextInt();\r\n                    Subtask retrievedSubtask = taskManager.getSubtask(subtaskToGet);\r\n                    if (retrievedSubtask != null) {\r\n                        historyManager.add(retrievedSubtask); // Добавление в историю\r\n                        System.out.println(retrievedSubtask);\r\n                    } else {\r\n                        System.out.println(\"Подзадача с таким ID не найдена.\");\r\n                    }\r\n                    break;\r\n\r\n                case 7: // Показать историю просмотренных задач\r\n                    List<Task> history = historyManager.getHistory();\r\n                    System.out.println(\"История просмотренных задач:\");\r\n                    for (Task h : history) {\r\n                        System.out.println(h);\r\n                    }\r\n                    break;\r\n\r\n                case 8: // Удалить задачу по ID\r\n                    System.out.println(\"Введите ID задачи для удаления:\");\r\n                    int taskIdToDelete = scanner.nextInt();\r\n                    taskManager.deleteTask(taskIdToDelete);\r\n                    System.out.println(\"Задача с ID \" + taskIdToDelete + \" удалена.\");\r\n                    break;\r\n\r\n                case 9: // Удалить подзадачу по ID\r\n                    System.out.println(\"Введите ID подзадачи для удаления:\");\r\n                    int subtaskIdToDelete = scanner.nextInt();\r\n                    taskManager.deleteSubtask(subtaskIdToDelete);\r\n                    System.out.println(\"Подзадача с ID \" + subtaskIdToDelete + \" удалена.\");\r\n                    break;\r\n\r\n                case 10: // Удалить эпик по ID\r\n                    System.out.println(\"Введите ID эпика для удаления:\");\r\n                    int epicIdToDelete = scanner.nextInt();\r\n                    taskManager.deleteEpic(epicIdToDelete);\r\n                    System.out.println(\"Эпик с ID \" + epicIdToDelete + \" удален.\");\r\n                    break;\r\n\r\n                case 0: // Выход\r\n                    System.out.println(\"Выход из программы.\");\r\n                    scanner.close();\r\n                    return;\r\n\r\n                default:\r\n                    System.out.println(\"Неверный выбор, попробуйте снова.\");\r\n                    break;\r\n            }\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	
++++ b/src/Main.java	
+@@ -155,4 +155,4 @@
+             }
+         }
+     }
+-}
++}
+\ No newline at end of file
