@@ -76,6 +76,7 @@ class InMemoryTaskManagerTest {
 
 
 
+
     @Test
     void deleteTask_ShouldRemoveTask() {
         Task task = new Task(0, "Task Title", "Task Description", Status.NEW);
@@ -83,7 +84,7 @@ class InMemoryTaskManagerTest {
         taskManager.deleteTask(taskId);
 
         Exception exception = assertThrows(NoSuchElementException.class, () -> taskManager.getTask(taskId));
-        assertEquals("Task with id " + taskId + " does not exist.", exception.getMessage());
+        assertEquals("Task с таким id " + taskId + " не существует.", exception.getMessage());
     }
 
     @Test

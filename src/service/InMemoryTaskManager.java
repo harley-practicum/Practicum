@@ -128,34 +128,20 @@ public class InMemoryTaskManager implements TaskManager {
 
     @Override
     public Task getTask(int id) {
-        try {
-            // Проверка на null перед доступом к коллекции
-            if (tasks == null) {
-                throw new IllegalStateException("Map задач не инициализирована.");
-            }
-
-            Task task = tasks.get(id); // Получаем задачу по ID
-
-            if (task == null) {
-                // Если задача не найдена, выбрасываем исключение
-                throw new NoSuchElementException("Task с таким id " + id + " не существует.");
-            }
-
-            historyManager.add(task); // Добавляем задачу в историю
-            return task; // Возвращаем найденную задачу
-        } catch (IllegalStateException e) {
-            // Обработка ситуации, когда tasks не инициализирован
-            System.out.println("Ошибка: " + e.getMessage());
-            return null; // Или выбросьте исключение, если это более уместно
-        } catch (NoSuchElementException e) {
-            // Обработка случая, когда задача не найдена
-            System.out.println("Ошибка: " + e.getMessage());
-            return null; // Или выбросьте исключение, если это более уместно
-        } catch (Exception e) {
-            // Обработка любых других исключений
-            System.out.println("Произошла ошибка при получении задачи: " + e.getMessage());
-            return null; // Или выбросьте исключение, если это более уместно
+        // Проверка на null перед доступом к коллекции
+        if (tasks == null) {
+            throw new IllegalStateException("Map задач не инициализирована.");
         }
+
+        Task task = tasks.get(id); // Получаем задачу по ID
+
+        if (task == null) {
+            // Если задача не найдена, выбрасываем исключение
+            throw new NoSuchElementException("Task с таким id " + id + " не существует.");
+        }
+
+        historyManager.add(task); // Добавляем задачу в историю
+        return task; // Возвращаем найденную задачу
     }
         @Override
         public Epic getEpic ( int id){
@@ -163,7 +149,7 @@ public class InMemoryTaskManager implements TaskManager {
             Epic epic = epics.get(id); // Получаем эпик по ID
             if (epic == null) {
                 // Если эпика нет, выбрасываем исключение
-                throw new NoSuchElementException("Epic with id " + id + " does not exist.");
+                throw new NoSuchElementException("Epic с таким id " + id + " не существует.");
             }
             historyManager.add(epic); // Добавляем эпик в историю
             return epic; // Возвращаем найденный эпик
